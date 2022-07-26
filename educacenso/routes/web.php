@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PeriodoController;
 use App\Http\Controllers\CursoController;
+use App\Http\Controllers\RespostaController;
 use App\Http\Controllers\TurmaController;
 use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
@@ -29,3 +30,5 @@ Route::post('/cursos/store', [CursoController::class, 'store']);
 Route::get('/cursos/edit/{id}', [CursoController::class, 'edit'])->where('id', '[0-9]+');
 Route::post('/cursos/update', [CursoController::class, 'update']);
 Route::get('/cursos/destroy/{id}', [CursoController::class, 'destroy'])->where('id', '[0-9]+');
+
+Route::get('/respostas', [RespostaController::class, 'index']);
