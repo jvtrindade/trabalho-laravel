@@ -12,7 +12,7 @@
    <!-- PEDIR ESTADO COM API -->
    <!-- BUSCAR AS CIDADES -->
    @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', 'value' => ''])
-   @include('components.field', ['type' => 'radio', 'id' => '', 'name' => 'nome_aluno', 'label' => 'Nome', 'value' => ""])
+   @include('components.field', ['type' => 'radio', 'id' => '', 'name' => 'poder_publico_responsavel', 'label' => '', 'value' => ""]) <!-- TERMINAR -->
 
    <a class="btn btn-danger" href="/transporte">Voltar</a>
    @include('components.button', ['type' => 'submit', 'color' => 'primary', 'texto' => 'Enviar'])
