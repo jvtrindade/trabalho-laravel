@@ -1,39 +1,31 @@
 <?php
 
 use App\Http\Controllers\PeriodoController;
+use App\Http\Controllers\CursoController;
+use App\Http\Controllers\TurmaController;
 use Illuminate\Support\Facades\Route;
+Route::get('/', function () {
+    return view('welcome');
+});
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::get('/turmas', [TurmaController::class, 'index']);
+Route::get('/turmas/show/{id}', [TurmaController::class, 'show'])->where('id', '[0-9]+');
+Route::get('/turmas/create', [TurmaController::class, 'create']);
+Route::post('/turmas/store', [TurmaController::class, 'store']);
+Route::get('/turmas/edit/{id}', [TurmaController::class, 'edit'])->where('id', '[0-9]+');
+Route::post('/turmas/update', [TurmaController::class, 'update']);
+Route::get('/turmas/destroy/{id}', [TurmaController::class, 'destroy'])->where('id', '[0-9]+');
 
-Route::get('/transportes', [seila::class, 'index']);
+Route::get('/periodos/show/{id}', [PeriodoController::class, 'show'])->where('id', '[0-9]+');
+Route::get('/periodos/create', [PeriodoController::class, 'create']);
+Route::post('/periodos/store', [PeriodoController::class, 'store']);
+Route::get('/periodos/edit/{id}', [PeriodoController::class, 'edit'])->where('id', '[0-9]+');
+Route::post('/peridos/update', [PeriodoController::class, 'update']);
+Route::get('/periodos/destroy/{id}', [PeriodoController::class, 'destroy'])->where('id', '[0-9]+');
 
-
-Route::get('/transportes-periodos/show/{id}', [PeriodoController::class, 'show'])->where('id', '[0-9]+');
-Route::get('/transportes-periodos/create', [PeriodoController::class, 'create']);
-Route::post('/transportes-periodos/store', [PeriodoController::class, 'store']);
-Route::get('/transportes-periodos/edit/{id}', [PeriodoController::class, 'edit'])->where('id', '[0-9]+');
-Route::post('/transportes-peridos/update', [PeriodoController::class, 'update']);
-Route::get('/transportes-periodos/destroy/{id}', [PeriodoController::class, 'destroy'])->where('id', '[0-9]+');
-
-Route::get('/transportes-cursos/show/{id}', [CursosController::class, 'show'])->where('id', '[0-9]+');
-Route::get('/transportes-cursos/create', [CursosController::class, 'create']);
-Route::post('/transportes-cursos/store', [CursosController::class, 'store']);
-Route::get('/transportes-cursos/edit/{id}', [CursosController::class, 'edit'])->where('id', '[0-9]+');
-Route::post('/transportes-cursos/update', [CursosController::class, 'update']);
-Route::get('/transportes-cursos/destroy/{id}', [CursosController::class, 'destroy'])->where('id', '[0-9]+');
-
-Route::get('/transportes-turmas/show/{id}', [TurmasController::class, 'show'])->where('id', '[0-9]+');
-Route::get('/transportes-turmas/create', [TurmasController::class, 'create']);
-Route::post('/transportes-turmas/store', [TurmasController::class, 'store']);
-Route::get('/transportes-turmas/edit/{id}', [TurmasController::class, 'edit'])->where('id', '[0-9]+');
-Route::post('/transportes-turmas/update', [TurmasController::class, 'update']);
-Route::get('/transportes-turmas/destroy/{id}', [TurmasController::class, 'destroy'])->where('id', '[0-9]+');
+Route::get('/cursos/show/{id}', [CursoController::class, 'show'])->where('id', '[0-9]+');
+Route::get('/cursos/create', [CursoController::class, 'create']);
+Route::post('/cursos/store', [CursoController::class, 'store']);
+Route::get('/cursos/edit/{id}', [CursoController::class, 'edit'])->where('id', '[0-9]+');
+Route::post('/cursos/update', [CursoController::class, 'update']);
+Route::get('/cursos/destroy/{id}', [CursoController::class, 'destroy'])->where('id', '[0-9]+');
