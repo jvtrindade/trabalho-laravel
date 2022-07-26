@@ -12,11 +12,11 @@ class PeriodoController extends Controller
         ->selectRaw("id, ano, dt_inicio, dt_fim")
         ->get();
 
-        return view('transporte.index', ['periodos' => $periodos]);
+        return view('periodos.index', ['periodos' => $periodos]);
     }
 
     function create(){
-        return view('transporte.create');
+        return view('periodos.create');
     }
 
     function store(Request $request){
@@ -26,7 +26,7 @@ class PeriodoController extends Controller
 
         DB::table('periodos')->insert($data);
 
-        return redirect('/transportes');
+        return redirect('/');
 
     }
 
@@ -45,7 +45,7 @@ class PeriodoController extends Controller
 
         DB::update("UPDATE periodos SET ano = :ano, dt_inicio = :dt_inicio, dt_fim = :dt_fim WHERE id = :id ", $data);
 
-        return redirect('/transportes');
+        return redirect('/');
 
     }
 
@@ -54,13 +54,13 @@ class PeriodoController extends Controller
         ->selectRaw("id, ano, dt_inicio, dt_fim")
         ->find($id);
 
-        return view('transporte.periodo.show', ['periodo' => $periodo]);
+        return view('periodos.show', ['periodo' => $periodo]);
     }
 
     function destroy($id){
         DB::delete("DELETE FROM periodos WHERE id = ?", [$id]);
 
-        return redirect('/transportes');
+        return redirect('/');
     }
 
 }
