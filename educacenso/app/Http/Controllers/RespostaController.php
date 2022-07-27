@@ -21,7 +21,7 @@ class RespostaController extends Controller
         if($ativo == false){
             echo('Não há nenhum período ativo no momento.');
         }else{
-            redirect('/respostas/create');
+            return redirect('/respostas/create');
         }
     }
 
