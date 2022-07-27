@@ -18,9 +18,9 @@
                 <td>{{$periodo->dt_inicio}}</td>
                 <td>{{$periodo->dt_fim}}</td>
                 <td>
-                    <a class="btn btn-warning" href="/periodos/{{$periodo->id}}/edit">Editar</a>
-                    <a class="btn btn-info" href="/periodos/{{$periodo->id}}/show">Ver</a>
-                    <a class="btn btn-danger" href="/periodos/{{$periodo->id}}/destroy">Remover</a>
+                    <a class="btn btn-warning" href="/periodos/edit/{{$periodo->id}}">Editar</a>
+                    <a class="btn btn-info" href="/periodos/show/{{$periodo->id}}">Ver</a>
+                    <a class="btn btn-danger" href="/periodos/destroy/{{$periodo->id}}">Remover</a>
                 </td>
             </tr>
         @endforeach

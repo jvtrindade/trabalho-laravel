@@ -32,9 +32,9 @@ class PeriodoController extends Controller
 
 
     function edit($id){
-        $periodos = DB::table('periodos')->find($id);
+        $periodo = DB::table('periodos')->find($id);
 
-        return view('periodos.edit');
+        return view('periodos.edit', ['periodo' => $periodo]);
 
     }
 
