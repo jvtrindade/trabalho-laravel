@@ -20,7 +20,7 @@ create table turmas(
 
 create table periodos(
     id int not null auto_increment,
-    ano  int NOT NULL,
+    ano  int(4) NOT NULL,
     dt_inicio date NOT NULL,
     dt_fim date NOT NULL,
     primary key (id)
