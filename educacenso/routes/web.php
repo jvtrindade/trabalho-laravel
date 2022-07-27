@@ -6,7 +6,7 @@ use App\Http\Controllers\RespostaController;
 use App\Http\Controllers\TurmaController;
 use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
-    return view('welcome');
+        return view('welcome');
 });
 
 Route::get('/turmas', [TurmaController::class, 'index']);

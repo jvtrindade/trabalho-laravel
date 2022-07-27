@@ -34,8 +34,8 @@ class TurmaController extends Controller
 
     function show($id) {
         $turmas = DB::table('turmas')
-        ->leftJoin('cursos', 'cursos.id', '=', 'turmas.curso_id')
-        ->select()
+        ->select('*')
+        ->addSelect(DB::raw('(select cursos.nome from cursos where cursos.id = turmas.curso_id) as curso'))
         ->where('turmas.id', $id)
         ->get();
 
@@ -44,8 +44,11 @@ class TurmaController extends Controller
 
     function edit($id){
         $turma = DB::table('turmas')->find($id);
+        $cursos = DB::table('cursos')
+        ->select()
+        ->get();
 
-        return view('turmas.edit', ['turma' => $turma]);
+        return view('turmas.edit', ['turma' => $turma, 'cursos' => $cursos]);
     }
 
     function update(Request $request){
