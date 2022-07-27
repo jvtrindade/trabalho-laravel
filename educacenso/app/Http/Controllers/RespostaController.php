@@ -16,7 +16,6 @@ class RespostaController extends Controller
                 echo('Não há nenhum período ativo no momento.');
                 die();
             }
-        }
-        
+        }        
     }
 }
