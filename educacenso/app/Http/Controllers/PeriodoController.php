@@ -26,7 +26,7 @@ class PeriodoController extends Controller
 
         DB::table('periodos')->insert($data);
 
-        return redirect('/');
+        return redirect('/periodos');
 
     }
 
@@ -34,7 +34,7 @@ class PeriodoController extends Controller
     function edit($id){
         $periodos = DB::table('periodos')->find($id);
 
-        return view();
+        return view('periodos.edit');
 
     }
 
@@ -45,7 +45,7 @@ class PeriodoController extends Controller
 
         DB::update("UPDATE periodos SET ano = :ano, dt_inicio = :dt_inicio, dt_fim = :dt_fim WHERE id = :id ", $data);
 
-        return redirect('/');
+        return redirect('/periodos');
 
     }
 
@@ -60,7 +60,7 @@ class PeriodoController extends Controller
     function destroy($id){
         DB::delete("DELETE FROM periodos WHERE id = ?", [$id]);
 
-        return redirect('/');
+        return redirect('/periodos');
     }
 
 }
