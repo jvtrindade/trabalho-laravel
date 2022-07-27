@@ -9,15 +9,19 @@ class TurmaController extends Controller
 {
     function index() {
         $turmas = DB::table('turmas')
-        ->leftJoin('cursos', 'cursos.id', '=', 'turmas.curso_id')
-        ->select()
+        ->select('*')
+        ->addSelect(DB::raw('(select cursos.nome from cursos where cursos.id = turmas.curso_id) as curso'))
         ->get();
 
         return view('turmas.index', ['turmas' => $turmas]);
     }
 
     function create(){
-        return view('turmas.create');
+        $cursos = DB::table('cursos')
+        ->select()
+        ->get();
+
+        return view('turmas.create', ['cursos' => $cursos]);
     }
 
     function store(Request $request){
