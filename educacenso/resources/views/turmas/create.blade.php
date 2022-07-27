@@ -10,7 +10,7 @@
             'value' => '',
         ])
         @foreach ($cursos as $curso)
-            @include ('components.select', ['name' => 'curso', 'label' => 'Curso', 'value' => $curso->id, 'opcao' => $curso->nome])
+            @include ('components.select', ['name' => 'curso_id', 'label' => 'Curso', 'value' => $curso->id, 'opcao' => $curso->nome])
         @endforeach
         <div class="mb-3">
             @include('components.button', ['type' => 'button', 'color' => 'danger', 'text' => 'Voltar'])
