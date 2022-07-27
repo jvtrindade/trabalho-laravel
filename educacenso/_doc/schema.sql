@@ -1,7 +1,7 @@
-drop database if exists trabalho_laravel;
+drop database if exists educacenso;
 
-create database trabalho_laravel;
-USE trabalho_laravel;
+create database educacenso;
+USE educacenso;
 
 create table cursos(
     id int not null auto_increment,

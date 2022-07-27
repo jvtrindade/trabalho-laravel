@@ -8,13 +8,12 @@ use Illuminate\Support\Facades\DB;
 class TurmaController extends Controller
 {
     function index() {
-        print "oi";
-        // $turmas = DB::table('turmas')
-        // ->leftJoin('cursos', 'cursos.id', '=', 'turmas.curso_id')
-        // ->select()
-        // ->get();
+        $turmas = DB::table('turmas')
+        ->leftJoin('cursos', 'cursos.id', '=', 'turmas.curso_id')
+        ->select()
+        ->get();
 
-        // return view('turmas.index', ['turmas' => $turmas]);
+        return view('turmas.index', ['turmas' => $turmas]);
     }
 
     function create(){
