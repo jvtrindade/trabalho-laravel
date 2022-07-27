@@ -37,7 +37,7 @@ create table respostas(
     transporte enum('onibus', 'van', 'microonibus') not null,
     poder_publico_responsavel enum('municipio', 'estado') not null,
     diferenca_paga float not null,
-    cidade varchar(200) not null,
+    uf varchar(200) not null,
     uf_id int not null,
 
     primary key (id),
