@@ -7,7 +7,16 @@
 {{-- fazer lista  --}}
 
 
-<a class="btn btn-dark d-grid gap-2 col-6 mx-auto my-3" href="/respostas/">Responder formulário</a>
+
+
+<ul class="list-group list-group-flush  my-3">
+    <li class="list-group-item"><a class="btn btn-secondary d-grid  col-10 mx-auto" href="/respostas/">Responder formulário</a></li>
+    <li class="list-group-item"><a class="btn btn-secondary d-grid  col-10 mx-auto " href="/respostas/?">Ver respostas</a></li>
+    <li class="list-group-item"><a class="btn btn-secondary d-grid  col-10 mx-auto " href="/cursos">Gerenciar cursos</a></li>
+    <li class="list-group-item"><a class="btn btn-secondary d-grid  col-10 mx-auto " href="/turmas">Gerenciar turmas</a></li>
+    <li class="list-group-item"><a class="btn btn-secondary d-grid  col-10 mx-auto " href="/periodos">Gerenciar períodos</a></li>
+
+</ul>
 
 
 @endsection
