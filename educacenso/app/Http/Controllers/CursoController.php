@@ -59,5 +59,12 @@ class CursoController extends Controller
 
         return redirect('/cursos');
     }
+
+    function show($id){
+        $curso = DB::table('cursos')
+        ->find($id);
+
+        return view('cursos.show', ['curso' => $curso]);
+    }
 }
 

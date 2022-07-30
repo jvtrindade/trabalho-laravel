@@ -23,7 +23,7 @@ Route::get('/periodos/show/{id}', [PeriodoController::class, 'show'])->where('id
 Route::get('/periodos/create', [PeriodoController::class, 'create']);
 Route::post('/periodos/store', [PeriodoController::class, 'store']);
 Route::get('/periodos/edit/{id}', [PeriodoController::class, 'edit'])->where('id', '[0-9]+');
-Route::post('/peridos/update', [PeriodoController::class, 'update']);
+Route::post('/periodos/update', [PeriodoController::class, 'update']);
 Route::get('/periodos/destroy/{id}', [PeriodoController::class, 'destroy'])->where('id', '[0-9]+');
 
 Route::get('/cursos', [CursoController::class, 'index']);
