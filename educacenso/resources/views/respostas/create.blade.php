@@ -28,23 +28,37 @@
 
     <!-- PEDIR ESTADO COM API -->
     <!-- BUSCAR AS CIDADES -->
+    @include('components.select'), [
+        'name' => 'transporte',
+        'label' => 'Transporte']
+    @section('option')
+        @include('components.field', [
+            'value' => 'onibus',
+            'option' => 'Ônibus'])
+        @include('components.field', [
+            'value' => 'van',
+            'option' => 'Van'])
+        @include('components.field', [
+            'value' => 'micro',
+            'option' => 'Micro-Ônibus'])
+    @endsection
     <p>Poder Público Responsável</p>
 
     @include('components.field', [
-       'type' => 'radio',
-       'id' => 'prefeitura',
-       'name' => 'poder_publico_responsavel',
-       'label' => 'Prefeitura',
-       'class' => '',
-       'value' => "Prefeitura"])
+    'type' => 'radio',
+    'id' => 'prefeitura',
+    'name' => 'poder_publico_responsavel',
+    'label' => 'Prefeitura',
+    'class' => '',
+    'value' => "Prefeitura"])
 
-   @include('components.field', [
-       'type' => 'radio',
-       'id' => 'estado',
-       'name' => 'poder_publico_responsavel',
-       'label' => 'Estado',
-       'class' => '',
-       'value' => "Estado"])
+    @include('components.field', [
+    'type' => 'radio',
+    'id' => 'estado',
+    'name' => 'poder_publico_responsavel',
+    'label' => 'Estado',
+    'class' => '',
+    'value' => "Estado"])
     <a class="btn btn-danger" href="/resposta">Voltar</a>
     @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
 </form>
