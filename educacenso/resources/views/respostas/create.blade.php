@@ -1,49 +1,51 @@
-
 @extends ('base.index')
 
 @section('container')
 
-<form action ='/respostas/store' method='post'>
-   <input type='hidden' name='_token' value='{{ csrf_token() }}'/>
+<form action='/respostas/store' method='post'>
+    <input type='hidden' name='_token' value='{{ csrf_token() }}' />
 
-   @include('components.field', ['type' => 'hidden', 'id' => 'periodo_id', 'name' => 'periodo_id', "label" => '', 'value' => ''])
-  @include('components.field', ['type' => 'hidden', 'id' => 'id', 'name' => 'id', "label" => '', 'value' => ''])
-  @include('components.field', ['type' => 'hidden', 'id' => 'turma_id', 'name' => 'turma_id', "label" => '', 'value' => ""])
-  @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', "label" => '', 'value' => ''])
+    @include('components.field', ['type' => 'hidden', 'id' => 'periodo_id', 'name' => 'periodo_id', "label" => '', 'class' => '', 'value' => ''])
+    @include('components.field', ['type' => 'hidden', 'id' => 'id', 'name' => 'id', "label" => '', 'class' => '', 'value' => ''])
+    @include('components.field', ['type' => 'hidden', 'id' => 'turma_id', 'name' => 'turma_id', 'class' => '', "label" => '', 'value' => ""])
+    @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', 'class' => '', "label" => '', 'value' => ''])
 
-  @include('components.field', [
-      'type' => 'text',
-      'id' => 'nome_aluno',
-      'name' => 'nome_aluno',
-      'label' => 'Nome',
-      'value' => ""])
+    @include('components.field', [
+    'type' => 'text',
+    'id' => 'nome_aluno',
+    'name' => 'nome_aluno',
+    'label' => 'Nome',
+    'class' => 'form-control',
+    'value' => ""])
 
-  @include('components.field', [
-      'type' => 'text',
-      'id' => 'cpf',
-      'name' => 'cpf',
-      'label' => 'CPF',
-      'value' => ""])
+    @include('components.field', [
+    'type' => 'text',
+    'id' => 'cpf',
+    'name' => 'cpf',
+    'label' => 'CPF',
+    'class' => 'form-control',
+    'value' => ""])
 
-  <!-- PEDIR ESTADO COM API -->
-  <!-- BUSCAR AS CIDADES -->
-   <p>Poder Público Responsável</p>
-  @include('components.field', [
-      'type' => 'radio',
-      'id' => 'prefeitura',
-      'name' => 'poder_publico_responsavel',
-      'label' => 'Prefeitura',
-      'value' => "Prefeitura"])
+    <!-- PEDIR ESTADO COM API -->
+    <!-- BUSCAR AS CIDADES -->
+    <p>Poder Público Responsável</p>
 
-  @include('components.field', [
-      'type' => 'radio',
-      'id' => 'estado',
-      'name' => 'poder_publico_responsavel',
-      'label' => 'Estado',
-      'value' => "Estado"])
+    @include('components.field', [
+       'type' => 'radio',
+       'id' => 'prefeitura',
+       'name' => 'poder_publico_responsavel',
+       'label' => 'Prefeitura',
+       'class' => '',
+       'value' => "Prefeitura"])
 
-
-  <a class="btn btn-danger" href="/resposta">Voltar</a>
-  @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
+   @include('components.field', [
+       'type' => 'radio',
+       'id' => 'estado',
+       'name' => 'poder_publico_responsavel',
+       'label' => 'Estado',
+       'class' => '',
+       'value' => "Estado"])
+    <a class="btn btn-danger" href="/resposta">Voltar</a>
+    @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
 </form>
 @endsection
