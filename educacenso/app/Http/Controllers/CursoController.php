@@ -31,7 +31,7 @@ class CursoController extends Controller
     }
 
     function edit($id){
-        $curso = DB::table('curso')
+        $curso = DB::table('cursos')
         ->find($id);
 
         return view('cursos.edit', [
@@ -49,7 +49,7 @@ class CursoController extends Controller
         ->where('id', $id)
         ->update($data);
 
-        redirect('/cursos');
+        return redirect('/cursos');
     }
 
     function destroy($id){
