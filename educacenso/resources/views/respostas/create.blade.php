@@ -28,21 +28,40 @@
 
     <!-- PEDIR ESTADO COM API -->
     <!-- BUSCAR AS CIDADES -->
-    @include('components.select'), [
+    {{--@include('components.select', [
         'name' => 'transporte',
-        'label' => 'Transporte']
+        'label' => 'Transporte'])
     @section('option')
-        @include('components.field', [
+        @include('components.option', [
             'value' => 'onibus',
             'option' => 'Ônibus'])
-        @include('components.field', [
+        @include('components.option', [
             'value' => 'van',
             'option' => 'Van'])
-        @include('components.field', [
+        @include('components.option', [
             'value' => 'micro',
             'option' => 'Micro-Ônibus'])
-    @endsection
+    @endsection--}}
+            <label for="transporte">Selecione o Transporte</label>
+            <select name="transporte" class="form-control" id="transporte">
+                <option value="onibus">Ônibus</option>
+                <option value="van">Van</option>
+                <option value="micro">Micro-Ônibus</option>
+            </select>
+            <label for="estado">Selecione o Estado</label>
+            <select name="estado" class="form-control" id="estado">
+                @foreach($estados as $estado)
+                    <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
+                @endforeach
+            </select>
+            <label for="cidade">Selecione a Cidade</label>
+            <select name="cidade" class="form-control" id="cidade">
+                @foreach($cidades as $cidade)
+                    <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
+                @endforeach
+            </select>
     <p>Poder Público Responsável</p>
+    <div style="border: 1px dotted gray;">
 
     @include('components.field', [
     'type' => 'radio',
@@ -59,7 +78,33 @@
     'label' => 'Estado',
     'class' => '',
     'value' => "Estado"])
-    <a class="btn btn-danger" href="/resposta">Voltar</a>
+
+    </div>
+    <p>Paga Diferença?</p>
+    <div style="border: 1px dotted gray;">
+    @include('components.field', [
+    'type' => 'radio',
+    'id' => 'sim',
+    'name' => 'paga_diferenca',
+    'label' => 'Sim',
+    'class' => '',
+    'value' => "sim"])
+    @include('components.field', [
+    'type' => 'radio',
+    'id' => 'nao',
+    'name' => 'paga_diferenca',
+    'label' => 'Não',
+    'class' => '',
+    'value' => "nao"])
+    </div>
+    @include('components.field', [
+    'type' => 'number',
+    'id' => 'diferenca_paga',
+    'name' => 'diferenca_paga',
+    'label' => 'Diferença Paga',
+    'class' => 'form-control',
+    'value' => ""])
+    <a class="btn btn-danger" href="/respostas">Voltar</a>
     @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
 </form>
 @endsection

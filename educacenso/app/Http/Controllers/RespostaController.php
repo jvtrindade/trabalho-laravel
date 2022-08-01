@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,13 +21,22 @@ class RespostaController extends Controller
         }
         if($ativo == false){
             echo('Não há nenhum período ativo no momento.');
-        }else{
-            return redirect('/respostas/create');
         }
     }
 
     function create(){
-        return view('respostas.create');
+        $urlEstados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
+        $estados = Request($urlEstados);
+        print $estados; // não consegui achar uma forma e fazer esse request
+
+        // $urlCidades = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/".$uf."/municipios";
+        // $cidades = Request($urlCidades);
+        // $cidades = json_encode($cidades);
+
+        return view('respostas.create', [
+            'estados' => $estados
+            // 'cidades' => $cidades
+        ]);
     }
 
     function store(Request $request){
