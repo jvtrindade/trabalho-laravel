@@ -9,7 +9,7 @@ class PeriodoController extends Controller
 {
     function index(){
         $periodos = DB::table('periodos')
-        ->selectRaw("id, ano, dt_inicio, dt_fim")
+        ->selectRaw("id, ano, DATE_FORMAT(dt_inicio, '%d/%m/%y') as dt_inicio, DATE_FORMAT(dt_fim, '%d/%m/%y') as dt_fim")
         ->get();
 
         return view('periodos.index', ['periodos' => $periodos]);
