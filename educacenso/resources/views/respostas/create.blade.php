@@ -46,6 +46,21 @@
             'value' => '',
         ])
 
+        @include('components.select', [
+            'name' => 'curso_id', //nome do campo no banco
+            'label' => 'Curso',
+            'coisas' => $cursos,
+        ])
+        @include('components.field', [
+            'type' => 'text',
+            'id' => 'nome_aluno',
+            'name' => 'nome_aluno',
+            'label' => 'Nome',
+            'class' => 'form-control',
+            'value' => '',
+            'onclick' => '',
+        ])
+
         @include('components.field', [
             'type' => 'text',
             'id' => 'cpf',
@@ -53,13 +68,15 @@
             'label' => 'CPF',
             'class' => 'form-control',
             'value' => '',
+            'onclick' => '',
         ])
 
-        @include('components.select', [
-            'name' => 'curso_id', //nome do campo no banco
-            'label' => 'Curso',
-            'coisas' => $cursos,
-        ])
+        {{-- <label for="periodo_id">Selecione o período para registro</label>
+        <select name="periodo_id" class="form-control" id="periodo_id">
+               @foreach ($periodos as $periodo)
+                <option value="{{ $periodo->id }}">{{ $periodo->id }}: {{ $periodo->dtinicio }} - {{ $periodo->dtfim }}</option>
+               @endforeach
+        </select> --}}
 
         {{-- @include('components.select', [
             'name' => 'turma_id', //nome do campo no banco
@@ -82,25 +99,26 @@
         @include('components.option', [
             'value' => 'micro',
             'option' => 'Micro-Ônibus'])
+<<<<<<< HEAD
     @endsection --}}
         <!-- <label for="transporte">Selecione o Transporte</label>
-                    <select name="transporte" class="form-control" id="transporte">
-                        <option value="onibus">Ônibus</option>
-                        <option value="van">Van</option>
-                        <option value="micro">Micro-Ônibus</option>
-                    </select>
-                    <label for="estado">Selecione o Estado</label>
-                    <select name="estado" class="form-control" id="estado">
-                        {{-- @foreach ($estados as $estado)
+                        <select name="transporte" class="form-control" id="transporte">
+                            <option value="onibus">Ônibus</option>
+                            <option value="van">Van</option>
+                            <option value="micro">Micro-Ônibus</option>
+                        </select>
+                        <label for="estado">Selecione o Estado</label>
+                        <select name="estado" class="form-control" id="estado">
+                            {{-- @foreach ($estados as $estado)
                     <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
                 @endforeach --}}
-                    </select>
-                    <label for="cidade">Selecione a Cidade</label>
-                    <select name="cidade" class="form-control" id="cidade">
-                        {{-- @foreach ($cidades as $cidade)
+                        </select>
+                        <label for="cidade">Selecione a Cidade</label>
+                        <select name="cidade" class="form-control" id="cidade">
+                            {{-- @foreach ($cidades as $cidade)
                     <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
                 @endforeach --}}
-                    </select> -->
+                        </select> -->
         <p>Poder Público Responsável</p>
         <div style="border: 1px dotted gray;">
 
@@ -153,4 +171,86 @@
         <a class="btn btn-danger" href="/respostas">Voltar</a>
         @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
     </form>
+    =======
+@endsection--}}
+{{-- <label for="transporte">Selecione o Transporte</label>
+            <select name="transporte" class="form-control" id="transporte">
+                <option value="onibus">Ônibus</option>
+                <option value="van">Van</option>
+                <option value="micro">Micro-Ônibus</option>
+            </select>
+            <label for="estado">Selecione o Estado</label>
+            <select name="estado" class="form-control" id="estado">
+                {{-- @foreach ($estados as $estado)
+                    <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
+                @endforeach --}}
+{{-- </select>
+            <label for="cidade">Selecione a Cidade</label>
+            <select name="cidade" class="form-control" id="cidade">
+                {{-- @foreach ($cidades as $cidade)
+                    <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
+                @endforeach --}}
+{{-- </select> --}}
+<p>Poder Público Responsável</p>
+<div style="border: 1px dotted gray;">
+
+    @include('components.field', [
+        'type' => 'radio',
+        'id' => 'prefeitura',
+        'name' => 'poder_publico_responsavel',
+        'label' => 'Prefeitura',
+        'class' => '',
+        'value' => 'Prefeitura',
+        'onclick' => '',
+    ])
+
+    @include('components.field', [
+        'type' => 'radio',
+        'id' => 'estado',
+        'name' => 'poder_publico_responsavel',
+        'label' => 'Estado',
+        'class' => '',
+        'value' => 'Estado',
+        'onclick' => '',
+    ])
+
+</div>
+<p>Paga Diferença?</p>
+<div style="border: 1px dotted gray;">
+    @include('components.field', [
+        'type' => 'radio',
+        'id' => 'sim',
+        'name' => 'paga_diferenca',
+        'label' => 'Sim',
+        'class' => '',
+        'value' => 'sim',
+        'onclick' => 'document.getElementById("diferenca_paga").disabled=false',
+    ])
+
+    @include('components.field', [
+        'type' => 'radio',
+        'id' => 'nao',
+        'name' => 'paga_diferenca',
+        'label' => 'Não',
+        'class' => '',
+        'value' => 'nao',
+        'onclick' => 'document.getElementById("diferenca_paga").disabled=true',
+    ])
+</div>
+
+@include('components.disable', [
+    'type' => 'number',
+    'id' => 'diferenca_paga',
+    'name' => 'diferenca_paga',
+    'label' => 'Diferença Paga',
+    'class' => 'form-control',
+    'value' => '',
+    'onclick' => '',
+])
+
+<a class="btn btn-danger" href="/respostas">Voltar</a>
+
+@include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
+</form>
+>>>>>>> bb477ebed447c613a35a6319f82393108dd80f3d
 @endsection
