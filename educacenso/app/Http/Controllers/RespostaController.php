@@ -57,15 +57,13 @@ class RespostaController extends Controller
         $hoje = Carbon::now()->format('Y-m-d');
         $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim", "id")->get();
         $ativo = false;
-        $periodo_id = 0;
         foreach($periodos as $p){
             if($hoje > $p->dt_inicio && $hoje < $p->dt_fim ){
                 $ativo = true;
-                $periodo_id = $p->id;
                 break;
             }
         }
-        if($ativo = true){
+        if($ativo == true){
             $data = $request->all();
             unset($data['_token']);
 
