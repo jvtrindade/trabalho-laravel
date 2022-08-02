@@ -20,6 +20,10 @@ class RespostaController extends Controller
     }
 
     function create(){
+        $cursos = DB::table('cursos')
+        ->select()
+        ->get();
+
         $hoje = Carbon::now()->format('Y-m-d');
         $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim", "id")->get();
         $ativo = false;
@@ -44,6 +48,7 @@ class RespostaController extends Controller
             // $cidades = Request($urlCidades);
             // $cidades = json_encode($cidades);
             return view('respostas.create', [
+                'cursos' => $cursos,
                 //'estados' => $estados,
                 // 'cidades' => $cidades
                 'periodo_id' => $periodo_id
@@ -75,7 +80,7 @@ class RespostaController extends Controller
     }
 
     function edit($id){
-        $resposta = DB::table('resposta')
+        $resposta = DB::table('respostas')
         ->find($id);
 
         return view('respostas.edit', [
