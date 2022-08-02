@@ -35,7 +35,7 @@ class TurmaController extends Controller
     function show($id) {
         $turmas = DB::table('turmas')
         ->select('*')
-        ->addSelect(DB::raw('(select cursos.nome from cursos where cursos.id = turmas.curso_id) as curso'))
+        ->addSelect(DB::raw('(select cursos.nome from cursos where cursos.id = turmas.curso_id) as cursos'))
         ->where('turmas.id', $id)
         ->get();
 
