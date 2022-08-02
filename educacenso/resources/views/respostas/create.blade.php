@@ -5,7 +5,6 @@
 <form action='/respostas/store' method='post'>
     <input type='hidden' name='_token' value='{{ csrf_token() }}' />
 
-    @include('components.field', ['type' => 'hidden', 'id' => 'periodo_id', 'name' => 'periodo_id', "label" => '', 'class' => '', 'value' => ''])
     @include('components.field', ['type' => 'hidden', 'id' => 'id', 'name' => 'id', "label" => '', 'class' => '', 'value' => ''])
     @include('components.field', ['type' => 'hidden', 'id' => 'turma_id', 'name' => 'turma_id', 'class' => '', "label" => '', 'value' => ""])
     @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', 'class' => '', "label" => '', 'value' => ''])
@@ -26,6 +25,13 @@
     'class' => 'form-control',
     'value' => ""])
 
+    <label for="periodo_id">Selecione o período para registro</label>
+        <select name="periodo_id" class="form-control" id="periodo_id">
+               @foreach($periodos as $periodo)
+                <option value="{{ $periodo->id }}">{{ $periodo->dt_inicio }} - {{ $periodo->dt_fim }}</option>
+               @endforeach 
+        </select>
+
     <!-- PEDIR ESTADO COM API -->
     <!-- BUSCAR AS CIDADES -->
     {{--@include('components.select', [
@@ -42,7 +48,7 @@
             'value' => 'micro',
             'option' => 'Micro-Ônibus'])
     @endsection--}}
-            <label for="transporte">Selecione o Transporte</label>
+            <!-- <label for="transporte">Selecione o Transporte</label>
             <select name="transporte" class="form-control" id="transporte">
                 <option value="onibus">Ônibus</option>
                 <option value="van">Van</option>
@@ -50,16 +56,16 @@
             </select>
             <label for="estado">Selecione o Estado</label>
             <select name="estado" class="form-control" id="estado">
-                @foreach($estados as $estado)
+                {{-- @foreach($estados as $estado)
                     <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
-                @endforeach
+                @endforeach --}}
             </select>
             <label for="cidade">Selecione a Cidade</label>
             <select name="cidade" class="form-control" id="cidade">
-                @foreach($cidades as $cidade)
+                {{-- @foreach($cidades as $cidade)
                     <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
-                @endforeach
-            </select>
+                @endforeach --}}
+            </select> -->
     <p>Poder Público Responsável</p>
     <div style="border: 1px dotted gray;">
 
