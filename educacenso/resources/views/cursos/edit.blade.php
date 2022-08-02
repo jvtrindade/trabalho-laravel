@@ -12,7 +12,7 @@
             'name' => 'nome',
             'label' => 'Nome do Curso',
             'class' => 'form-control',
-            'value' => '{{ $curso->nome }}',
+            'value' => $curso->nome,
         ])
         @include('components.field', [
             'type' => 'text',
@@ -20,12 +20,10 @@
             'name' => 'nome_reduzido',
             'label' => 'Nome Reduzido do Curso',
             'class' => 'form-control',
-            'value' => '{{ $curso->nome_reduzido }}',
+            'value' => $curso->nome_reduzido,
         ])
 
         @include('components.button', ['color' => 'success', 'text' => 'Inserir', 'type' => 'submit'])
         <a class="btn btn-danger" href="/cursos">Voltar</a>
     </form>
-
-    {{ $curso->nome }}
 @endsection
