@@ -20,6 +20,10 @@ class RespostaController extends Controller
     }
 
     function create(){
+        $cursos = DB::table('cursos')
+        ->select()
+        ->get();
+
         $hoje = Carbon::now()->format('Y-m-d');
         $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim")->get();
         $ativo = false;
@@ -43,6 +47,7 @@ class RespostaController extends Controller
         }
 
             return view('respostas.create', [
+                'cursos' => $cursos,
                 //'estados' => $estados,
                 // 'cidades' => $cidades
             ]);
