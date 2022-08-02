@@ -37,9 +37,9 @@ Route::get('/cursos/destroy/{id}', [CursoController::class, 'destroy'])->where('
 Route::get('/respostas', [RespostaController::class, 'index']);
 Route::get('/respostas/show/', [RespostaController::class, 'show']);
 Route::get('/respostas/create', [RespostaController::class, 'create']);
-// Route::post('/respostas/store', [RespostaController::class, 'store']);
-// Route::get('/respostas/edit/{id}', [RespostaController::class, 'edit'])->where('id', '[0-9]+');
-// Route::post('/respostas/update', [RespostaController::class, 'update']);
-// Route::get('/respostas/destroy/{id}', [RespostaController::class, 'destroy'])->where('id', '[0-9]+');
+Route::post('/respostas/store', [RespostaController::class, 'store']);
+Route::get('/respostas/edit/{id}', [RespostaController::class, 'edit'])->where('id', '[0-9]+');
+Route::post('/respostas/update', [RespostaController::class, 'update']);
+Route::get('/respostas/destroy/{id}', [RespostaController::class, 'destroy'])->where('id', '[0-9]+');
 
 Route::get('/home', [HomeController::class, 'index']);
