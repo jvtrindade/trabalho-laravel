@@ -28,7 +28,7 @@
     <label for="periodo_id">Selecione o período para registro</label>
         <select name="periodo_id" class="form-control" id="periodo_id">
                @foreach($periodos as $periodo)
-                <option value="{{ $periodo->id }}">{{ $periodo->id }}: {{ $periodo->dtinicio }} - {{ $periodo->dtfim }}</option>
+                <option value="{{ $periodo->id }}">{{ $periodo->dt_inicio }} - {{ $periodo->dt_fim }}</option>
                @endforeach 
         </select>
 
@@ -48,7 +48,7 @@
             'value' => 'micro',
             'option' => 'Micro-Ônibus'])
     @endsection--}}
-            <label for="transporte">Selecione o Transporte</label>
+            <!-- <label for="transporte">Selecione o Transporte</label>
             <select name="transporte" class="form-control" id="transporte">
                 <option value="onibus">Ônibus</option>
                 <option value="van">Van</option>
@@ -65,7 +65,7 @@
                 {{-- @foreach($cidades as $cidade)
                     <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
                 @endforeach --}}
-            </select>
+            </select> -->
     <p>Poder Público Responsável</p>
     <div style="border: 1px dotted gray;">
 
