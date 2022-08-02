@@ -25,17 +25,23 @@ class RespostaController extends Controller
     }
 
     function create(){
-        $urlEstados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
-        $estados = Request($urlEstados);
-        print $estados; // não consegui achar uma forma e fazer esse request
+
+        $periodos = DB::table('periodos')
+        ->select()
+        ->get();
+
+        //$urlEstados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
+        //$estados = Request($urlEstados);
+        //print $estados; // não consegui achar uma forma e fazer esse request
 
         // $urlCidades = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/".$uf."/municipios";
         // $cidades = Request($urlCidades);
         // $cidades = json_encode($cidades);
 
         return view('respostas.create', [
-            'estados' => $estados
+            //'estados' => $estados,
             // 'cidades' => $cidades
+            'periodos' => $periodos
         ]);
     }
 
