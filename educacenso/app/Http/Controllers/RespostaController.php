@@ -84,10 +84,12 @@ class RespostaController extends Controller
         return redirect('/respostas');
     }
 
-    function show($id){
-        $resposta = DB::table('respostas')
-        ->find($id);
+    function show(){
+        $respostas = DB::table('respostas')
+        ->select('*')
+        ->addSelect(DB::raw('(select cursos.nome from cursos where cursos.id = respostas.curso_id) as curso'))
+        ->get();
 
-        return view('respostas.show', ['resposta' => $resposta]);
+        return view('respostas.index', ['respostas' => $respostas]);
     }
 }

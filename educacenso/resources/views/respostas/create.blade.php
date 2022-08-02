@@ -56,15 +56,15 @@
             </select>
             <label for="estado">Selecione o Estado</label>
             <select name="estado" class="form-control" id="estado">
-                @foreach($estados as $estado)
+                {{-- @foreach($estados as $estado)
                     <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
-                @endforeach
+                @endforeach --}}
             </select>
             <label for="cidade">Selecione a Cidade</label>
             <select name="cidade" class="form-control" id="cidade">
-                @foreach($cidades as $cidade)
+                {{-- @foreach($cidades as $cidade)
                     <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
-                @endforeach
+                @endforeach --}}
             </select>
     <p>Poder Público Responsável</p>
     <div style="border: 1px dotted gray;">
