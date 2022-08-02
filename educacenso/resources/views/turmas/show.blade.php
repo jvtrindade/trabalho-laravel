@@ -8,5 +8,5 @@
         <li>curso_id: {{ $turma[0]->curso_id }}</li>
     </ul>
 
-    <a href="/turmas" class="btn btn-info">Voltar</a>
+    <a href="/turmas" class="btn btn-danger">Voltar</a>
 @endsection

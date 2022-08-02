@@ -10,7 +10,13 @@ use Illuminate\Support\Facades\DB;
 class RespostaController extends Controller
 {
     function index(){
+        $respostas = DB::table('respostas')
+        ->select('*')
+        ->addSelect(DB::raw('(select periodos.ano from periodos where periodos.id = respostas.periodo_id) as periodo'))
+        ->addSelect(DB::raw('(select turmas.nome from turmas where turmas.id = respostas.turma_id) as turma'))
+        ->get();
 
+        return view('respostas.index', ['respostas' => $respostas]);
     }
 
     function create(){
@@ -81,12 +87,4 @@ class RespostaController extends Controller
         return redirect('/respostas');
     }
 
-    function show(){
-        $respostas = DB::table('respostas')
-        ->select('*')
-        ->addSelect(DB::raw('(select cursos.nome from cursos where cursos.id = respostas.curso_id) as curso'))
-        ->get();
-
-        return view('respostas.index', ['respostas' => $respostas]);
-    }
 }

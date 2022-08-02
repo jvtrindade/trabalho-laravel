@@ -30,7 +30,7 @@ create table respostas(
     id int not null auto_increment,
     periodo_id int not null,
     nome_aluno varchar(200) not null,
-    cpf int not null,
+    cpf varchar(200) not null,
     turma_id int not null,
     cidade varchar(200) not null,
     cidade_id int not null,

@@ -7,7 +7,7 @@
     <li>Data de início: {{$periodo->dt_inicio}}</li>
     <li>Data de término: {{$periodo->dt_fim}}</li>
 </ul>
-<a href="/periodos" class="btn btn-info">Voltar</a>
+<a href="/periodos" class="btn btn-danger">Voltar</a>
 
 @endsection
 
