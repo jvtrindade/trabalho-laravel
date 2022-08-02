@@ -75,7 +75,7 @@ class RespostaController extends Controller
     }
 
     function edit($id){
-        $resposta = DB::table('resposta')
+        $resposta = DB::table('respostas')
         ->find($id);
 
         return view('respostas.edit', [
