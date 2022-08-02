@@ -8,6 +8,7 @@
     @include('components.field', ['type' => 'hidden', 'id' => 'id', 'name' => 'id', "label" => '', 'class' => '', 'value' => ''])
     @include('components.field', ['type' => 'hidden', 'id' => 'turma_id', 'name' => 'turma_id', 'class' => '', "label" => '', 'value' => ""])
     @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', 'class' => '', "label" => '', 'value' => ''])
+    @include('components.field', ['type' => 'hidden', 'id' => 'periodo_id', 'name' => 'periodo_id', 'class' => '', "label" => '', 'value' => ''])
 
     @include('components.field', [
     'type' => 'text',
@@ -24,13 +25,6 @@
     'label' => 'CPF',
     'class' => 'form-control',
     'value' => ""])
-
-    <label for="periodo_id">Selecione o período para registro</label>
-        <select name="periodo_id" class="form-control" id="periodo_id">
-               @foreach($periodos as $periodo)
-                <option value="{{ $periodo->id }}">{{ $periodo->dt_inicio }} - {{ $periodo->dt_fim }}</option>
-               @endforeach 
-        </select>
 
     <!-- PEDIR ESTADO COM API -->
     <!-- BUSCAR AS CIDADES -->
