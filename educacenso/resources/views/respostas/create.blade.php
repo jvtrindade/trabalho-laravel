@@ -5,9 +5,9 @@
 <form action='/respostas/store' method='post'>
     <input type='hidden' name='_token' value='{{ csrf_token() }}' />
 
-    @include('components.field', ['type' => 'hidden', 'id' => 'id', 'name' => 'id', "label" => '', 'class' => '', 'value' => ''])
-    @include('components.field', ['type' => 'hidden', 'id' => 'turma_id', 'name' => 'turma_id', 'class' => '', "label" => '', 'value' => ""])
-    @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', 'class' => '', "label" => '', 'value' => ''])
+    @include('components.field', ['type' => 'hidden', 'id' => 'id', 'name' => 'id', "label" => '', 'class' => '', 'value' => '', 'onclick' => ''])
+    @include('components.field', ['type' => 'hidden', 'id' => 'turma_id', 'name' => 'turma_id', 'class' => '', "label" => '', 'value' => "", 'onclick' => ''])
+    @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', 'class' => '', "label" => '', 'value' => '', 'onclick' => ''])
 
     @include('components.field', [
     'type' => 'text',
@@ -15,7 +15,8 @@
     'name' => 'nome_aluno',
     'label' => 'Nome',
     'class' => 'form-control',
-    'value' => ""])
+    'value' => "",
+    'onclick' => ''])
 
     @include('components.field', [
     'type' => 'text',
@@ -23,14 +24,15 @@
     'name' => 'cpf',
     'label' => 'CPF',
     'class' => 'form-control',
-    'value' => ""])
+    'value' => "",
+    'onclick' => ''])
 
-    <label for="periodo_id">Selecione o período para registro</label>
+    {{-- <label for="periodo_id">Selecione o período para registro</label>
         <select name="periodo_id" class="form-control" id="periodo_id">
                @foreach($periodos as $periodo)
                 <option value="{{ $periodo->id }}">{{ $periodo->id }}: {{ $periodo->dtinicio }} - {{ $periodo->dtfim }}</option>
-               @endforeach 
-        </select>
+               @endforeach
+        </select> --}}
 
     <!-- PEDIR ESTADO COM API -->
     <!-- BUSCAR AS CIDADES -->
@@ -48,7 +50,7 @@
             'value' => 'micro',
             'option' => 'Micro-Ônibus'])
     @endsection--}}
-            <label for="transporte">Selecione o Transporte</label>
+            {{-- <label for="transporte">Selecione o Transporte</label>
             <select name="transporte" class="form-control" id="transporte">
                 <option value="onibus">Ônibus</option>
                 <option value="van">Van</option>
@@ -59,13 +61,13 @@
                 {{-- @foreach($estados as $estado)
                     <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
                 @endforeach --}}
-            </select>
+            {{-- </select>
             <label for="cidade">Selecione a Cidade</label>
             <select name="cidade" class="form-control" id="cidade">
                 {{-- @foreach($cidades as $cidade)
                     <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
                 @endforeach --}}
-            </select>
+            {{-- </select> --}}
     <p>Poder Público Responsável</p>
     <div style="border: 1px dotted gray;">
 
@@ -75,7 +77,8 @@
     'name' => 'poder_publico_responsavel',
     'label' => 'Prefeitura',
     'class' => '',
-    'value' => "Prefeitura"])
+    'value' => "Prefeitura",
+    'onclick' => ''])
 
     @include('components.field', [
     'type' => 'radio',
@@ -83,7 +86,8 @@
     'name' => 'poder_publico_responsavel',
     'label' => 'Estado',
     'class' => '',
-    'value' => "Estado"])
+    'value' => "Estado",
+    'onclick' => ''])
 
     </div>
     <p>Paga Diferença?</p>
@@ -94,23 +98,30 @@
     'name' => 'paga_diferenca',
     'label' => 'Sim',
     'class' => '',
-    'value' => "sim"])
+    'value' => "sim",
+    'onclick' => 'document.getElementById("diferenca_paga").disabled=false'])
+
     @include('components.field', [
     'type' => 'radio',
     'id' => 'nao',
     'name' => 'paga_diferenca',
     'label' => 'Não',
     'class' => '',
-    'value' => "nao"])
+    'value' => "nao",
+    'onclick' => 'document.getElementById("diferenca_paga").disabled=true'])
     </div>
-    @include('components.field', [
+
+    @include('components.disable', [
     'type' => 'number',
     'id' => 'diferenca_paga',
     'name' => 'diferenca_paga',
     'label' => 'Diferença Paga',
     'class' => 'form-control',
-    'value' => ""])
+    'value' => "",
+    'onclick' => ''])
+
     <a class="btn btn-danger" href="/respostas">Voltar</a>
+
     @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
 </form>
 @endsection
