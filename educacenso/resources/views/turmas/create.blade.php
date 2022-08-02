@@ -9,6 +9,7 @@
             'name' => 'nome',
             'label' => 'Nome',
             'value' => '',
+            'onclick' => '',
             'class' => 'form-control',
         ])
 
