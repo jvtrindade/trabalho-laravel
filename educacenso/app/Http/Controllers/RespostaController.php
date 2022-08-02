@@ -21,16 +21,19 @@ class RespostaController extends Controller
 
     function create(){
         $hoje = Carbon::now()->format('Y-m-d');
-        $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim")->get();
+        $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim", "id")->get();
         $ativo = false;
+        $periodo_id = 0;
         foreach($periodos as $p){
             if($hoje > $p->dt_inicio && $hoje < $p->dt_fim ){
                 $ativo = true;
+                $periodo_id = $p->id;
                 break;
             }
         }
         if($ativo == false){
             echo('Não há nenhum período ativo no momento.');
+            print('<br> <a href="/home/">Voltar</a>');
         }else{
 
             //$urlEstados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
@@ -40,21 +43,37 @@ class RespostaController extends Controller
             // $urlCidades = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/".$uf."/municipios";
             // $cidades = Request($urlCidades);
             // $cidades = json_encode($cidades);
-        }
-
             return view('respostas.create', [
                 //'estados' => $estados,
                 // 'cidades' => $cidades
+                'periodo_id' => $periodo_id
             ]);
+        }
+
+
     }
 
     function store(Request $request){
-        $data = $request->all();
-        unset($data['_token']);
+        $hoje = Carbon::now()->format('Y-m-d');
+        $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim", "id")->get();
+        $ativo = false;
+        $periodo_id = 0;
+        foreach($periodos as $p){
+            if($hoje > $p->dt_inicio && $hoje < $p->dt_fim ){
+                $ativo = true;
+                $periodo_id = $p->id;
+                break;
+            }
+        }
+        if($ativo = true){
+            $data = $request->all();
+            unset($data['_token']);
 
-        DB::table('respostas')->insert($data);
+            DB::table('respostas')->insert($data);
 
-        return redirect('/respostas');
+            return redirect('/respostas');
+        }
+
     }
 
     function edit($id){
