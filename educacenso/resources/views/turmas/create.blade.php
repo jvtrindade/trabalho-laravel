@@ -13,12 +13,12 @@
         ])
 
         @include ('components.select', [
-            'name' => 'curso_id',
+            'name' => 'curso_id', //nome do campo no banco
             'label' => 'Curso',
             'coisas' => $cursos
             ])
         <div class="mb-3">
-            @include('components.button', ['type' => 'button', 'color' => 'danger', 'text' => 'Voltar'])
+            <a class="btn btn-danger" href="/turmas">Voltar</a>
             @include('components.button', ['type' => 'submit', 'color' => 'success', 'text' => 'Enviar'])
         </div>
     </form>

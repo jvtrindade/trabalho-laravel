@@ -10,8 +10,8 @@
 <input type='number' name='ano' id="ano" min="1950" max='9999' class="form-control" required/>
 </div>
 
-@include('components.field', ['type' => 'date', 'id' => 'dt_inicio', 'name' => 'dt_inicio', 'label' => 'varzea', 'class' => 'form-control', 'value' => ''])
-@include('components.field', ['type' => 'date', 'id' => 'dt_fim', 'name' => 'dt_fim', 'label' => 'varzea', 'class' => 'form-control', 'value' => ''])
+@include('components.field', ['type' => 'date', 'id' => 'dt_inicio', 'name' => 'dt_inicio', 'label' => 'Data de início', 'class' => 'form-control', 'value' => ''])
+@include('components.field', ['type' => 'date', 'id' => 'dt_fim', 'name' => 'dt_fim', 'label' => 'Data de término', 'class' => 'form-control', 'value' => ''])
 
 @include('components.button', ['color'=> 'success', 'text' => 'Inserir', 'type' => 'submit'])
 <a class="btn btn-danger" href="/periodos">Voltar</a>
