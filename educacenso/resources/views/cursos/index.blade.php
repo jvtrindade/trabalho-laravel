@@ -1,8 +1,9 @@
 @extends('base.index')
 
 @section('container')
-<a class="btn btn-success mb-2" href="/cursos/create">Novo Curso</a>
-<table class="table table-secondary border-info">
+<a class="btn btn-dark d-grid gap-2 col-6 mx-auto my-3" href="/cursos/create">Novo Curso</a>
+<a class="btn btn-dark d-grid gap-2 col-6 mx-auto my-3" href="/home/">Voltar</a>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>Nome do Curso</th>
@@ -16,8 +17,8 @@
                 <td>{{$curso->nome}}</td>
                 <td>{{$curso->nome_reduzido}}</td>
                 <td>
-                    <a class="btn btn-warning" href="/cursos/edit/{{$curso->id}}">Editar</a>
-                    <a class="btn btn-info" href="/cursos/show/{{$curso->id}}">Ver</a>
+                    <a class="btn btn-secondary" href="/cursos/edit/{{$curso->id}}">Editar</a>
+                    <a class="btn btn-success" href="/cursos/show/{{$curso->id}}">Ver</a>
                     <a class="btn btn-danger" href="/cursos/destroy/{{$curso->id}}">Remover</a>
                 </td>
             </tr>

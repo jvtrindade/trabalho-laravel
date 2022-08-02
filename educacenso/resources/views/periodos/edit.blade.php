@@ -10,7 +10,7 @@
 
 <div class="mb-3">
 <label for="ano" class="form-label">Ano</label>
-<input type='number' name='ano' id="ano" min="1950" max='9999' class="form-control" value="{{ $periodo->ano }}" required/>
+<input type='number' name='ano' id="ano" min="1950" max='2100' class="form-control" value="{{ $periodo->ano }}" required/>
 </div>
 
 @include('components.field', ['type' => 'date', 'id' => 'dt_inicio', 'name' => 'dt_inicio', 'label' => 'Data início', 'class' => 'form-control', 'value' => '{{ $periodo->dt_inicio }}'])

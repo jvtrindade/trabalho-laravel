@@ -1,8 +1,9 @@
 @extends('base.index')
 
 @section('container')
-    <a class="btn btn-success" href="/turmas/create">Incluir Turma</a>
-    <table class="table table-dark">
+    <a class="btn btn-dark d-grid gap-2 col-6 mx-auto my-3" href="/turmas/create">Incluir Turma</a>
+    <a class="btn btn-dark d-grid gap-2 col-6 mx-auto my-3" href="/home/">Voltar</a>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -16,8 +17,8 @@
                     <td> {{ $turma->nome }} </td>
                     <td> {{ $turma->curso }} </td>
                     <td>
-                        <a class="btn btn-warning" href="/turmas/edit/{{ $turma->id }}">Alterar</a>
-                        <a class="btn btn-primary" href="/turmas/show/{{ $turma->id }}">Ver</a>
+                        <a class="btn btn-secondary" href="/turmas/edit/{{ $turma->id }}">Editar</a>
+                        <a class="btn btn-success" href="/turmas/show/{{ $turma->id }}">Ver</a>
                         <a class="btn btn-danger" href="/turmas/destroy/{{ $turma->id }}">Remover</a>
                     </td>
                 </tr>
