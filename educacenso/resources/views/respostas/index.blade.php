@@ -1,11 +1,9 @@
 @extends('base.index')
 
 @section('container')
-
-
 <a class="btn btn-dark d-grid gap-2 col-6 mx-auto my-3" href="/respostas/create">Novo cadastro</a>
 
-<table class="table table-dark table-bordered table-hover my-3">
+<table class="table table-secondary border-info">
     <thead>
         <tr>
             <th>Nome</th>
@@ -24,8 +22,9 @@
         <td>{{ $resposta->transporte}}</td>
         <td>{{ $resposta->poder_publico_responsavel}}</td>
         <td>
-            <a class="btn btn-warning" href="/respostas/{{$resposta->id}}/edit">Editar</a>
-            <a class="btn btn-danger" href="/respostas/{{$resposta->id}}/destroy">Remover</a>
+            <a class="btn btn-warning" href="/respostas/edit/{{$resposta->id}}">Editar</a>
+            <a class="btn btn-info" href="/respostas/show/{{$resposta->id}}">Ver</a>
+            <a class="btn btn-danger" href="/respostas/destroy/{{$resposta->id}}">Remover</a>
          </td>
     </tr>
     @endforeach
