@@ -37,12 +37,6 @@
             'value' => '',
         ])
 
-<<<<<<< HEAD
-    @include('components.field', ['type' => 'hidden', 'id' => 'id', 'name' => 'id', "label" => '', 'class' => '', 'value' => '', 'onclick' => '' ])
-    @include('components.field', ['type' => 'hidden', 'id' => 'turma_id', 'name' => 'turma_id', 'class' => '', "label" => '', 'value' => "", 'onclick' => ''])
-    @include('components.field', ['type' => 'hidden', 'id' => 'cidade_id', 'name' => 'cidade_id', 'class' => '', "label" => '', 'value' => '', 'onclick' => ''])
-    @include('components.field', ['type' => 'hidden', 'id' => 'periodo_id', 'name' => 'periodo_id', 'class' => '', "label" => '', 'value' => $periodo_id, 'onclick' => ''])
-=======
         @include('components.field', [
             'type' => 'text',
             'id' => 'nome_aluno',
@@ -51,7 +45,6 @@
             'class' => 'form-control',
             'value' => '',
         ])
->>>>>>> b47ade20df810442b12cd446a941cdf028ea6c33
 
         @include('components.select', [
             'name' => 'curso_id', //nome do campo no banco
