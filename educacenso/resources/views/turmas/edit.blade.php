@@ -11,12 +11,14 @@
             'name' => 'nome',
             'label' => 'Nome',
             'value' => $turma->nome,
+            'onclick' => '',
             'class' => 'form-control',
         ])
             @include ('components.select', [
+                'selected' => $turma->curso_id,
                 'name' => 'curso_id',
                 'label' => 'Curso',
-                'coisas' => $cursos
+                'coisas' => $cursos,
             ])
         <div>
             <a class="btn btn-danger" href="/turmas">Voltar</a>
