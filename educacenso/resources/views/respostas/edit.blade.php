@@ -29,11 +29,11 @@
 
    @include('components.field', [
        'type' => 'radio',
-       'id' => 'prefeitura',
+       'id' => 'municipio',
        'name' => 'poder_publico_responsavel',
-       'label' => 'Prefeitura',
+       'label' => 'Município',
        'class' => '',
-       'value' => "Prefeitura",
+       'value' => "Município",
        'onclick' => '']) <!-- ver dos radios-->
 
    @include('components.field', [
