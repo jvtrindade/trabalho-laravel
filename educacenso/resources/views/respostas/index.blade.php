@@ -13,6 +13,8 @@
             <th>Turma</th>
             <th>Transporte</th>
             <th>Poder público responsável</th>
+            <th>Cidade</th>
+            <th>Estado</th>
             <th>Diferença paga</th>
             <th>Ações</th>
         </tr>
@@ -27,6 +29,8 @@
         <td>{{ $resposta->turma}}</td>
         <td>{{ $resposta->transporte}}</td>
         <td>{{ $resposta->poder_publico_responsavel}}</td>
+        <td>{{ $resposta->cidade}}</td>
+        <td>{{ $resposta->uf}}</td>
         <td>{{ $resposta->diferenca_paga}}</td>
         <td>
             <a class="btn btn-secondary" href="/respostas/edit/{{$resposta->id}}">Editar</a>

@@ -13,6 +13,7 @@
             'value' => $turma->nome,
             'onclick' => '',
             'class' => 'form-control',
+            'onclick' => ''
         ])
             @include ('components.select', [
                 'selected' => $turma->curso_id,
@@ -22,7 +23,7 @@
             ])
         <div>
             <a class="btn btn-danger" href="/turmas">Voltar</a>
-            @include('components.button', ['type' => 'submit', 'color' => 'success', 'text' => 'Enviar'])
+            @include('components.button', ['type' => 'submit', 'color' => 'success', 'text' => 'Editar'])
         </div>
     </form>
 @endsection

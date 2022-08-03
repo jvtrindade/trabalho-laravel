@@ -13,10 +13,10 @@
 <input type='number' name='ano' id="ano" min="1950" max='2100' class="form-control" value="{{ $periodo->ano }}" required/>
 </div>
 
-@include('components.field', ['type' => 'date', 'id' => 'dt_inicio', 'name' => 'dt_inicio', 'label' => 'Data início', 'class' => 'form-control', 'value' => $periodo->dt_inicio])
-@include('components.field', ['type' => 'date', 'id' => 'dt_fim', 'name' => 'dt_fim', 'label' => 'Data fim', 'class' => 'form-control', 'value' => $periodo->dt_fim])
+@include('components.field', ['type' => 'date', 'id' => 'dt_inicio', 'name' => 'dt_inicio', 'label' => 'Data início', 'class' => 'form-control', 'value' => $periodo->dt_inicio, 'onclick' => ''])
+@include('components.field', ['type' => 'date', 'id' => 'dt_fim', 'name' => 'dt_fim', 'label' => 'Data fim', 'class' => 'form-control', 'value' => $periodo->dt_fim, 'onclick' => ''])
 
-@include('components.button', ['color'=> 'success', 'text' => 'Inserir', 'type' => 'submit'])
+@include('components.button', ['color'=> 'success', 'text' => 'Editar', 'type' => 'submit'])
 <a class="btn btn-danger" href="/periodos">Voltar</a>
 </form>
 

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 @include('base.header', ['title' => 'EducaCenso'])
 <body>
-    <div class="container">
+    <div class="container my-5">
         @yield('container')
     </div>
 
