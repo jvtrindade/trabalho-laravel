@@ -15,7 +15,7 @@ create table turmas(
     nome  varchar(200) NOT NULL,
     curso_id int NOT NULL,
     primary key (id),
-    FOREIGN KEY (curso_id) REFERENCES cursos(id)
+    FOREIGN KEY (curso_id) REFERENCES cursos(id) ON DELETE CASCADE
 );
 
 create table periodos(
@@ -31,7 +31,7 @@ create table respostas(
     periodo_id int not null,
     nome_aluno varchar(200) not null,
     cpf varchar(200) not null,
-    turma_id int not null,
+    turma_id int not null, -- ideal seria guardar só nome da turma
     cidade varchar(200) not null,
     cidade_id int not null,
     transporte enum('onibus', 'van', 'microonibus') not null,
@@ -42,5 +42,5 @@ create table respostas(
 
     primary key (id),
     FOREIGN KEY (periodo_id) REFERENCES periodos(id),
-    FOREIGN KEY (turma_id) REFERENCES turmas(id)
+    FOREIGN KEY (turma_id) REFERENCES turmas(id) 
 )
