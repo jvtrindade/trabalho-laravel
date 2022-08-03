@@ -58,6 +58,13 @@
             'coisas' => $cursos,
         ])
 
+        @include('components.select', [
+            'name' => 'turma_id', //nome do campo no banco
+            'selected' => '',
+            'label' => 'Turma',
+            'coisas' => $turmas,
+        ])
+
         @include('components.field', [
             'type' => 'text',
             'id' => 'cpf',
@@ -99,24 +106,24 @@
 <<<<<<< HEAD
     @endsection --}}
         <!-- <label for="transporte">Selecione o Transporte</label>
-                            <select name="transporte" class="form-control" id="transporte">
-                                <option value="onibus">Ônibus</option>
-                                <option value="van">Van</option>
-                                <option value="micro">Micro-Ônibus</option>
-                            </select>
-                            <label for="estado">Selecione o Estado</label>
-                            <select name="estado" class="form-control" id="estado">
-                                {{-- @foreach ($estados as $estado)
+                                <select name="transporte" class="form-control" id="transporte">
+                                    <option value="onibus">Ônibus</option>
+                                    <option value="van">Van</option>
+                                    <option value="micro">Micro-Ônibus</option>
+                                </select>
+                                <label for="estado">Selecione o Estado</label>
+                                <select name="estado" class="form-control" id="estado">
+                                    {{-- @foreach ($estados as $estado)
                     <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
                 @endforeach --}}
-                            </select>
-                            <label for="cidade">Selecione a Cidade</label>
-                            <select name="cidade" class="form-control" id="cidade">
-                                {{-- @foreach ($cidades as $cidade)
+                                </select>
+                                <label for="cidade">Selecione a Cidade</label>
+                                <select name="cidade" class="form-control" id="cidade">
+                                    {{-- @foreach ($cidades as $cidade)
                     <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
                 @endforeach --}}
-<<<<<<< HEAD
-                            </select> -->
+    <<<<<<< HEAD
+                                </select> -->
 
         <p>Poder Público Responsável</p>
         <div style="border: 1px dotted gray;">
@@ -179,68 +186,5 @@
 
         @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
     </form>
-=======
-                        </select> -->
-
-<p>Poder Público Responsável</p>
-<div style="border: 1px dotted gray;">
-
-    @include('components.field', [
-        'type' => 'radio',
-        'id' => 'municipio',
-        'name' => 'poder_publico_responsavel',
-        'label' => 'Município',
-        'class' => '',
-        'value' => 'Município',
-        'onclick' => '',
-    ])
-
-    @include('components.field', [
-        'type' => 'radio',
-        'id' => 'estado',
-        'name' => 'poder_publico_responsavel',
-        'label' => 'Estado',
-        'class' => '',
-        'value' => 'Estado',
-        'onclick' => '',
-    ])
-
-</div>
-<p>Paga Diferença?</p>
-<div style="border: 1px dotted gray;">
-    @include('components.field', [
-        'type' => 'radio',
-        'id' => 'sim',
-        'name' => 'paga_diferenca',
-        'label' => 'Sim',
-        'class' => '',
-        'value' => 'sim',
-        'onclick' => 'document.getElementById("diferenca_paga").disabled=false',
-    ])
-
-    @include('components.field', [
-        'type' => 'radio',
-        'id' => 'nao',
-        'name' => 'paga_diferenca',
-        'label' => 'Não',
-        'class' => '',
-        'value' => 'nao',
-        'onclick' => 'document.getElementById("diferenca_paga").disabled=true',
-    ])
-</div>
-
-@include('components.disable', [
-    'type' => 'number',
-    'id' => 'diferenca_paga',
-    'name' => 'diferenca_paga',
-    'label' => 'Diferença Paga',
-    'class' => 'form-control',
-    'value' => '',
-    'onclick' => '',
-])
-
-<a class="btn btn-danger" href="/respostas">Voltar</a>
-
-@include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
-</form>
+    </select>
 @endsection
