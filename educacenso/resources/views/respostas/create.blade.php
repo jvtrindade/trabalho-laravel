@@ -1,7 +1,7 @@
 @extends ('base.index')
 
 @section('container')
-    <form action='/respostas/store' method='post'>
+    <form action='/respostas/store' method='POST'>
         <input type='hidden' name='_token' value='{{ csrf_token() }}' />
 
         @include('components.field', [
@@ -55,15 +55,6 @@
             'name' => 'curso_id', //nome do campo no banco
             'label' => 'Curso',
             'coisas' => $cursos,
-        ])
-        @include('components.field', [
-            'type' => 'text',
-            'id' => 'nome_aluno',
-            'name' => 'nome_aluno',
-            'label' => 'Nome',
-            'class' => 'form-control',
-            'value' => '',
-            'onclick' => '',
         ])
 
         @include('components.field', [

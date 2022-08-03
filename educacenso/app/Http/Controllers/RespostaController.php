@@ -113,7 +113,7 @@ class RespostaController extends Controller
         ->where('id', $id)
         ->update($data);
 
-        redirect('/respostas');
+        return redirect('/respostas');
     }
 
     function destroy($id){
