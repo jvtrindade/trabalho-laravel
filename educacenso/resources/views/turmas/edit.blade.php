@@ -11,10 +11,12 @@
             'name' => 'nome',
             'label' => 'Nome',
             'value' => $turma->nome,
+            'onclick' => '',
             'class' => 'form-control',
             'onclick' => ''
         ])
             @include ('components.select', [
+                'selected' => $turma->curso_id,
                 'name' => 'curso_id',
                 'label' => 'Curso',
                 'coisas' => $cursos,

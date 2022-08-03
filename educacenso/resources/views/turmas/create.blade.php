@@ -15,6 +15,7 @@
 
         @include ('components.select', [
             'name' => 'curso_id', //nome do campo no banco
+            'selected' => '',
             'label' => 'Curso',
             'coisas' => $cursos
             ])
