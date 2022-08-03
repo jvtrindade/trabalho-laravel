@@ -11,6 +11,7 @@
             'label' => '',
             'class' => '',
             'value' => '',
+            'onclick' => '',
         ])
         @include('components.field', [
             'type' => 'hidden',
@@ -19,6 +20,7 @@
             'class' => '',
             'label' => '',
             'value' => '',
+            'onclick' => '',
         ])
         @include('components.field', [
             'type' => 'hidden',
@@ -27,6 +29,7 @@
             'class' => '',
             'label' => '',
             'value' => '',
+            'onclick' => '',
         ])
         @include('components.field', [
             'type' => 'hidden',
@@ -35,6 +38,7 @@
             'class' => '',
             'label' => '',
             'value' => '',
+            'onclick' => '',
         ])
 
         @include('components.field', [
@@ -44,6 +48,7 @@
             'label' => 'Nome',
             'class' => 'form-control',
             'value' => '',
+            'onclick' => '',
         ])
 
         @include('components.select', [
@@ -119,78 +124,7 @@
                     <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
                 @endforeach --}}
                         </select> -->
-        <p>Poder Público Responsável</p>
-        <div style="border: 1px dotted gray;">
 
-            @include('components.field', [
-                'type' => 'radio',
-                'id' => 'prefeitura',
-                'name' => 'poder_publico_responsavel',
-                'label' => 'Prefeitura',
-                'class' => '',
-                'value' => 'Prefeitura',
-            ])
-
-            @include('components.field', [
-                'type' => 'radio',
-                'id' => 'estado',
-                'name' => 'poder_publico_responsavel',
-                'label' => 'Estado',
-                'class' => '',
-                'value' => 'Estado',
-            ])
-
-        </div>
-        <p>Paga Diferença?</p>
-        <div style="border: 1px dotted gray;">
-            @include('components.field', [
-                'type' => 'radio',
-                'id' => 'sim',
-                'name' => 'paga_diferenca',
-                'label' => 'Sim',
-                'class' => '',
-                'value' => 'sim',
-            ])
-            @include('components.field', [
-                'type' => 'radio',
-                'id' => 'nao',
-                'name' => 'paga_diferenca',
-                'label' => 'Não',
-                'class' => '',
-                'value' => 'nao',
-            ])
-        </div>
-        @include('components.field', [
-            'type' => 'number',
-            'id' => 'diferenca_paga',
-            'name' => 'diferenca_paga',
-            'label' => 'Diferença Paga',
-            'class' => 'form-control',
-            'value' => '',
-        ])
-        <a class="btn btn-danger" href="/respostas">Voltar</a>
-        @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
-    </form>
-    =======
-@endsection--}}
-{{-- <label for="transporte">Selecione o Transporte</label>
-            <select name="transporte" class="form-control" id="transporte">
-                <option value="onibus">Ônibus</option>
-                <option value="van">Van</option>
-                <option value="micro">Micro-Ônibus</option>
-            </select>
-            <label for="estado">Selecione o Estado</label>
-            <select name="estado" class="form-control" id="estado">
-                {{-- @foreach ($estados as $estado)
-                    <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
-                @endforeach --}}
-{{-- </select>
-            <label for="cidade">Selecione a Cidade</label>
-            <select name="cidade" class="form-control" id="cidade">
-                {{-- @foreach ($cidades as $cidade)
-                    <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
-                @endforeach --}}
-{{-- </select> --}}
 <p>Poder Público Responsável</p>
 <div style="border: 1px dotted gray;">
 
@@ -252,5 +186,4 @@
 
 @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
 </form>
->>>>>>> bb477ebed447c613a35a6319f82393108dd80f3d
 @endsection
