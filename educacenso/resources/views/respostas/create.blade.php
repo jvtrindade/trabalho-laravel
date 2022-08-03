@@ -75,55 +75,19 @@
             'onclick' => '',
         ])
 
-        {{-- <label for="periodo_id">Selecione o período para registro</label>
-        <select name="periodo_id" class="form-control" id="periodo_id">
-               @foreach ($periodos as $periodo)
-                <option value="{{ $periodo->id }}">{{ $periodo->id }}: {{ $periodo->dtinicio }} - {{ $periodo->dtfim }}</option>
-               @endforeach
-        </select> --}}
+        <label for="transporte">Selecione o Transporte</label>
+        <select name="transporte" class="form-control" id="transporte">
+            <option value="onibus">Ônibus</option>
+            <option value="van">Van</option>
+            <option value="micro">Micro-Ônibus</option>
+        </select>
 
-        {{-- @include('components.select', [
-            'name' => 'turma_id', //nome do campo no banco
-            'label' => 'Turma',
-            'coisas' => $turmas,
-        ]) --}}
+        <label for="estado">Selecione o Estado</label>
+        <select name="estado" class="form-control" id="estado"></select>
 
-        <!-- PEDIR ESTADO COM API -->
-        <!-- BUSCAR AS CIDADES -->
-        {{-- @include('components.select', [
-        'name' => 'transporte',
-        'label' => 'Transporte'])
-    @section('option')
-        @include('components.option', [
-            'value' => 'onibus',
-            'option' => 'Ônibus'])
-        @include('components.option', [
-            'value' => 'van',
-            'option' => 'Van'])
-        @include('components.option', [
-            'value' => 'micro',
-            'option' => 'Micro-Ônibus'])
-<<<<<<< HEAD
-    @endsection --}}
-        <!-- <label for="transporte">Selecione o Transporte</label>
-                                <select name="transporte" class="form-control" id="transporte">
-                                    <option value="onibus">Ônibus</option>
-                                    <option value="van">Van</option>
-                                    <option value="micro">Micro-Ônibus</option>
-                                </select>
-                                <label for="estado">Selecione o Estado</label>
-                                <select name="estado" class="form-control" id="estado">
-                                    {{-- @foreach ($estados as $estado)
-                    <option value="{{$estado->sigla}}">{{$estado->sigla}}</option>
-                @endforeach --}}
-                                </select>
-                                <label for="cidade">Selecione a Cidade</label>
-                                <select name="cidade" class="form-control" id="cidade">
-                                    {{-- @foreach ($cidades as $cidade)
-                    <option value="{{$cidade->nome}}">{{$cidade->nome}}</option>
-                @endforeach --}}
-    <<<<<<< HEAD
-                                </select> -->
+        
+        <label for="cidade">Selecione a Cidade</label>
+        <select name="cidade" class="form-control" disabled id="cidade"></select>
 
         <p>Poder Público Responsável</p>
         <div style="border: 1px dotted gray;">
@@ -158,7 +122,7 @@
                 'label' => 'Sim',
                 'class' => '',
                 'value' => 'sim',
-                'onclick' => 'document.getElementById("diferenca_paga").disabled=false',
+                'onclick' => "$('#dpaga').css('display','')",
             ])
 
             @include('components.field', [
@@ -168,10 +132,11 @@
                 'label' => 'Não',
                 'class' => '',
                 'value' => 'nao',
-                'onclick' => 'document.getElementById("diferenca_paga").disabled=true',
+                'onclick' => "$('#dpaga').css('display','none')",
             ])
         </div>
 
+        <div id="dpaga" style="display:none">
         @include('components.disable', [
             'type' => 'number',
             'id' => 'diferenca_paga',
@@ -181,6 +146,7 @@
             'value' => '',
             'onclick' => '',
         ])
+        </div>
 
         <a class="btn btn-danger" href="/respostas">Voltar</a>
 
