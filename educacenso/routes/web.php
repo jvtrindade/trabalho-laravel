@@ -10,6 +10,9 @@ Route::get('/', function () {
         return view('welcome');
 });
 
+
+
+
 Route::get('/turmas', [TurmaController::class, 'index']);
 Route::get('/turmas/show/{id}', [TurmaController::class, 'show'])->where('id', '[0-9]+');
 Route::get('/turmas/create', [TurmaController::class, 'create']);
@@ -27,6 +30,7 @@ Route::post('/periodos/update', [PeriodoController::class, 'update']);
 Route::get('/periodos/destroy/{id}', [PeriodoController::class, 'destroy'])->where('id', '[0-9]+');
 
 Route::get('/cursos', [CursoController::class, 'index']);
+/* Route::get('/getCursos', [CursoController::class, 'getCursos']); */
 Route::get('/cursos/show/{id}', [CursoController::class, 'show'])->where('id', '[0-9]+');
 Route::get('/cursos/create', [CursoController::class, 'create']);
 Route::post('/cursos/store', [CursoController::class, 'store']);

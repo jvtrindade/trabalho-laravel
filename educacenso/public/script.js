@@ -1,8 +1,0 @@
-
-onload = async () =>{
-
-
-  alert('bla')
-
-
-}
