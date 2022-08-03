@@ -39,8 +39,9 @@ create table respostas(
     diferenca_paga float not null,
     uf varchar(200) not null,
     uf_id int not null,
+    paga_diferenca varchar(10),
 
     primary key (id),
     FOREIGN KEY (periodo_id) REFERENCES periodos(id),
-    FOREIGN KEY (turma_id) REFERENCES turmas(id) 
+    FOREIGN KEY (turma_id) REFERENCES turmas(id)
 )
