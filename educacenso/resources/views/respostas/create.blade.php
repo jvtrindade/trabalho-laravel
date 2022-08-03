@@ -11,6 +11,7 @@
             'label' => '',
             'class' => '',
             'value' => '',
+            'onclick' => '',
         ])
         @include('components.field', [
             'type' => 'hidden',
@@ -19,6 +20,7 @@
             'class' => '',
             'label' => '',
             'value' => '',
+            'onclick' => '',
         ])
         @include('components.field', [
             'type' => 'hidden',
@@ -27,6 +29,7 @@
             'class' => '',
             'label' => '',
             'value' => '',
+            'onclick' => '',
         ])
         @include('components.field', [
             'type' => 'hidden',
@@ -35,6 +38,7 @@
             'class' => '',
             'label' => '',
             'value' => '',
+            'onclick' => '',
         ])
 
         @include('components.field', [
@@ -44,6 +48,7 @@
             'label' => 'Nome',
             'class' => 'form-control',
             'value' => '',
+            'onclick' => '',
         ])
 
         @include('components.select', [
@@ -129,6 +134,7 @@
                 'label' => 'Prefeitura',
                 'class' => '',
                 'value' => 'Prefeitura',
+                'onclick' => '',
             ])
 
             @include('components.field', [
@@ -138,6 +144,7 @@
                 'label' => 'Estado',
                 'class' => '',
                 'value' => 'Estado',
+                'onclick' => '',
             ])
 
         </div>
@@ -150,6 +157,7 @@
                 'label' => 'Sim',
                 'class' => '',
                 'value' => 'sim',
+                'onclick' => '',
             ])
             @include('components.field', [
                 'type' => 'radio',
@@ -158,6 +166,7 @@
                 'label' => 'Não',
                 'class' => '',
                 'value' => 'nao',
+                'onclick' => '',
             ])
         </div>
         @include('components.field', [
@@ -167,12 +176,13 @@
             'label' => 'Diferença Paga',
             'class' => 'form-control',
             'value' => '',
+            'onclick' => '',
         ])
         <a class="btn btn-danger" href="/respostas">Voltar</a>
         @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
     </form>
     =======
-@endsection--}}
+{{-- @endsection--}} --}}
 {{-- <label for="transporte">Selecione o Transporte</label>
             <select name="transporte" class="form-control" id="transporte">
                 <option value="onibus">Ônibus</option>
@@ -252,5 +262,4 @@
 
 @include('components.button', ['type' => 'submit', 'color' => 'primary', 'text' => 'Enviar'])
 </form>
->>>>>>> bb477ebed447c613a35a6319f82393108dd80f3d
 @endsection
