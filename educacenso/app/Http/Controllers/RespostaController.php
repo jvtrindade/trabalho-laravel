@@ -16,6 +16,21 @@ class RespostaController extends Controller
         ->addSelect(DB::raw('(select turmas.nome from turmas where turmas.id = respostas.turma_id) as turma'))
         ->get();
 
+        foreach($respostas as $resposta){
+            if($resposta->transporte == "onibus"){
+                $resposta->transporte = "Ônibus";
+            }elseif($resposta->transporte == "microonibus"){
+                $resposta->transporte = "Micro-ônibus";
+            }elseif($resposta->transporte == "van"){
+                $resposta->transporte = "Van";
+            }
+            if($resposta->poder_publico_responsavel == "municipio"){
+                $resposta->poder_publico_responsavel = "Município";
+            }elseif($resposta->poder_publico_responsavel == "estado"){
+                $resposta->poder_publico_responsavel = "Estado";
+            }
+        }
+
         return view('respostas.index', ['respostas' => $respostas]);
     }
 
