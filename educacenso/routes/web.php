@@ -10,6 +10,9 @@ Route::get('/', function () {
         return view('welcome');
 });
 
+
+
+
 Route::get('/turmas', [TurmaController::class, 'index']);
 Route::get('/turmas/show/{id}', [TurmaController::class, 'show'])->where('id', '[0-9]+');
 Route::get('/turmas/create', [TurmaController::class, 'create']);
