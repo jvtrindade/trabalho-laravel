@@ -5,12 +5,12 @@ use App\Http\Controllers\CursoController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RespostaController;
 use App\Http\Controllers\TurmaController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
         return view('welcome');
 });
-
-
 
 
 Route::get('/turmas', [TurmaController::class, 'index']);
@@ -20,6 +20,11 @@ Route::post('/turmas/store', [TurmaController::class, 'store']);
 Route::get('/turmas/edit/{id}', [TurmaController::class, 'edit'])->where('id', '[0-9]+');
 Route::post('/turmas/update', [TurmaController::class, 'update']);
 Route::get('/turmas/destroy/{id}', [TurmaController::class, 'destroy'])->where('id', '[0-9]+');
+Route::get('/getturmas', function(){
+    $turmas = DB::table('turmas')->select()->get();
+    echo json_encode($turmas);
+});
+
 
 Route::get('/periodos', [PeriodoController::class, 'index']);
 Route::get('/periodos/show/{id}', [PeriodoController::class, 'show'])->where('id', '[0-9]+');
@@ -36,6 +41,10 @@ Route::post('/cursos/store', [CursoController::class, 'store']);
 Route::get('/cursos/edit/{id}', [CursoController::class, 'edit'])->where('id', '[0-9]+');
 Route::post('/cursos/update', [CursoController::class, 'update']);
 Route::get('/cursos/destroy/{id}', [CursoController::class, 'destroy'])->where('id', '[0-9]+');
+Route::get('/getcursos', function(){
+    $cursos = DB::table('cursos')->select()->get();
+    echo json_encode($cursos);
+});
 
 Route::get('/respostas', [RespostaController::class, 'index']);
 Route::get('/respostas/show/', [RespostaController::class, 'show']);

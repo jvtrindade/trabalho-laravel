@@ -13,7 +13,7 @@
             'value' => '',
             'onclick' => '',
         ])
-        @include('components.field', [
+        {{-- @include('components.field', [
             'type' => 'hidden',
             'id' => 'turma_id',
             'name' => 'turma_id',
@@ -21,7 +21,7 @@
             'label' => '',
             'value' => '',
             'onclick' => '',
-        ])
+        ]) --}}
         @include('components.field', [
             'type' => 'hidden',
             'id' => 'cidade_id',
@@ -55,14 +55,14 @@
             'name' => 'curso_id', //nome do campo no banco
             'selected' => '',
             'label' => 'Curso',
-            'coisas' => $cursos,
+            /* 'coisas' => $cursos, */
         ])
 
         @include('components.select', [
             'name' => 'turma_id', //nome do campo no banco
             'selected' => '',
             'label' => 'Turma',
-            'coisas' => $turmas,
+            /* 'coisas' => $turmas, */
         ])
 
         @include('components.field', [
@@ -85,7 +85,7 @@
         <label for="estado">Selecione o Estado</label>
         <select name="estado" class="form-control" id="estado"></select>
 
-        
+
         <label for="cidade">Selecione a Cidade</label>
         <select name="cidade" class="form-control" disabled id="cidade"></select>
 
