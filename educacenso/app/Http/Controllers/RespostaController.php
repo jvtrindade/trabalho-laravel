@@ -91,6 +91,7 @@ class RespostaController extends Controller
         if($ativo == true){
             $data = $request->all();
             unset($data['_token']);
+            /* unset($data['curso_id']); */ // serase?
 
             DB::table('respostas')->insert($data);
 
