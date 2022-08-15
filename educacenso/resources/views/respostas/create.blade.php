@@ -13,15 +13,15 @@
             'value' => '',
             'onclick' => '',
         ])
-        {{-- @include('components.field', [
+        @include('components.field', [
             'type' => 'hidden',
-            'id' => 'turma_id',
-            'name' => 'turma_id',
-            'class' => '',
+            'id' => 'uf_id',
+            'name' => 'uf_id',
             'label' => '',
+            'class' => '',
             'value' => '',
             'onclick' => '',
-        ]) --}}
+        ])
         @include('components.field', [
             'type' => 'hidden',
             'id' => 'cidade_id',
@@ -37,7 +37,7 @@
             'name' => 'periodo_id',
             'class' => '',
             'label' => '',
-            'value' => '',
+            'value' => $periodo_id,
             'onclick' => '',
         ])
 
@@ -52,17 +52,15 @@
         ])
 
         @include('components.select', [
-            'name' => 'curso_id', //nome do campo no banco
+            'name' => 'curso_id',
             'selected' => '',
             'label' => 'Curso',
-            /* 'coisas' => $cursos, */
         ])
 
         @include('components.select', [
-            'name' => 'turma_id', //nome do campo no banco
+            'name' => 'turma_id',
             'selected' => '',
             'label' => 'Turma',
-            /* 'coisas' => $turmas, */
         ])
 
         @include('components.field', [
@@ -79,11 +77,11 @@
         <select name="transporte" class="form-control" id="transporte">
             <option value="onibus">Ônibus</option>
             <option value="van">Van</option>
-            <option value="micro">Micro-Ônibus</option>
+            <option value="microonibus">Micro-Ônibus</option>
         </select>
 
-        <label for="estado">Selecione o Estado</label>
-        <select name="estado" class="form-control" id="estado"></select>
+        <label for="uf">Selecione o Estado</label>
+        <select name="uf" class="form-control" id="uf"></select>
 
 
         <label for="cidade">Selecione a Cidade</label>
@@ -94,11 +92,11 @@
 
             @include('components.field', [
                 'type' => 'radio',
-                'id' => 'prefeitura',
+                'id' => 'municipio',
                 'name' => 'poder_publico_responsavel',
-                'label' => 'Prefeitura',
+                'label' => 'Município',
                 'class' => '',
-                'value' => 'Prefeitura',
+                'value' => 'municipio',
                 'onclick' => '',
             ])
 
@@ -137,7 +135,7 @@
         </div>
 
         <div id="dpaga" style="display:none">
-        @include('components.disable', [
+        @include('components.field', [
             'type' => 'number',
             'id' => 'diferenca_paga',
             'name' => 'diferenca_paga',

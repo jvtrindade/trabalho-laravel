@@ -34,7 +34,7 @@
        'label' => 'Município',
        'class' => '',
        'value' => "Município",
-       'onclick' => '']) <!-- ver dos radios-->
+       'onclick' => ''])
 
    @include('components.field', [
        'type' => 'radio',

@@ -35,13 +35,6 @@ class RespostaController extends Controller
     }
 
     function create(){
-/*         $cursos = DB::table('cursos')
-        ->select()
-        ->get();
-
-        $turmas = DB::table('turmas')
-        ->select()
-        ->get(); */
 
         $hoje = Carbon::now()->format('Y-m-d');
         $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim", "id")->get();
@@ -58,19 +51,7 @@ class RespostaController extends Controller
             echo('Não há nenhum período ativo no momento.');
             print('<br> <a href="/home/">Voltar</a>');
         }else{
-
-            //$urlEstados = "https://servicodados.ibge.gov.br/api/v1/localidades/estados";
-            //$estados = Request($urlEstados);
-            //print $estados; // não consegui achar uma forma e fazer esse request
-
-            // $urlCidades = "https://servicodados.ibge.gov.br/api/v1/localidades/estados/".$uf."/municipios";
-            // $cidades = Request($urlCidades);
-            // $cidades = json_encode($cidades);
             return view('respostas.create', [
-/*                 'cursos' => $cursos,
-                'turmas' => $turmas, */
-                //'estados' => $estados,
-                // 'cidades' => $cidades
                 'periodo_id' => $periodo_id
             ]);
         }
@@ -91,7 +72,9 @@ class RespostaController extends Controller
         if($ativo == true){
             $data = $request->all();
             unset($data['_token']);
-            /* unset($data['curso_id']); */ // serase?
+            unset($data['curso_id']);
+
+            var_dump($data);
 
             DB::table('respostas')->insert($data);
 

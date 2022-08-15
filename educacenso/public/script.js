@@ -3,23 +3,27 @@ onload = async () =>{
   let urle = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome';
 
   $.getJSON(urle, function(data){
-    let conteudo = ""
+    let conteudo = "<option disabled selected value=''>Selecione o estado desejada</option>"
     $.each(data, function(v,val){
       conteudo += "<option value='"+val.sigla+"'>"+val.nome+"</option>"
     });
 
-    $("#estado").html(conteudo);
-    $("#estado").change(async function(){
-      $("#cidade").attr('disabled', true)
-      $.getJSON(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${$(this).val()}/municipios?orderBy=nome`, function(data){
-        let conteudo = ""
+    $("#uf").html(conteudo);
+    $("#uf").change(async function(){
+        $("#cidade").attr('disabled', true)
+        $.getJSON(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${$(this).val()}/municipios?orderBy=nome`, function(data){
+        let conteudo = "<option disabled selected value=''>Selecione a cidade desejada</option>"
         $.each(data, function(v,val){
-          conteudo += "<option value='"+val.id+"'>"+val.nome+"</option>"
+          conteudo += "<option value='"+val.nome+"'>"+val.nome+"</option>"
         });
 
         $("#cidade").html(conteudo);
         $("#cidade").attr('disabled', false)
       })
+    })
+
+    $("#cidade").change(async function(){
+        $("cidade_id").val() = "ALGUMA COISA"
     })
   })
 

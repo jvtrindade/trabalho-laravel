@@ -13,6 +13,7 @@ onload = async () => {
           });
 
         turma = await response.json()
-        
+
     });
+
 };
