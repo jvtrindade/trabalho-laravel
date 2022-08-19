@@ -4,9 +4,6 @@
 
 <h1 class="text-center">Dados sobre transporte escolar público para o EDUCACENSO</h1>
 
-{{-- fazer lista  --}}
-
-
 
 
 <ul class="list-group list-group-flush  my-3">

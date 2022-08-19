@@ -88,7 +88,7 @@
         <select name="cidade" class="form-control" disabled id="cidade"></select>
 
         <p>Poder Público Responsável</p>
-        <div style="border: 1px dotted gray;">
+
 
             @include('components.field', [
                 'type' => 'radio',
@@ -110,9 +110,7 @@
                 'onclick' => '',
             ])
 
-        </div>
         <p>Paga Diferença?</p>
-        <div style="border: 1px dotted gray;">
             @include('components.field', [
                 'type' => 'radio',
                 'id' => 'sim',
@@ -132,7 +130,6 @@
                 'value' => 'nao',
                 'onclick' => "$('#dpaga').css('display','none')",
             ])
-        </div>
 
         <div id="dpaga" style="display:none">
         @include('components.field', [
