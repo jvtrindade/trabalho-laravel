@@ -138,7 +138,7 @@
             'name' => 'diferenca_paga',
             'label' => 'Diferença Paga',
             'class' => 'form-control',
-            'value' => '',
+            'value' => '0',
             'onclick' => '',
         ])
         </div>
