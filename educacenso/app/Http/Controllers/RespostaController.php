@@ -40,6 +40,15 @@ class RespostaController extends Controller
         $periodos = DB::table("periodos")->select("dt_inicio", "dt_fim", "id")->get();
         $ativo = false;
         $periodo_id = 0;
+
+        $cursos = DB::table('cursos')
+        ->select()
+        ->get();
+
+        $turmas = DB::table('turmas')
+        ->select()
+        ->get();
+
         foreach($periodos as $p){
             if($hoje > $p->dt_inicio && $hoje < $p->dt_fim ){
                 $ativo = true;
@@ -52,7 +61,9 @@ class RespostaController extends Controller
             print('<br> <a href="/home/">Voltar</a>');
         }else{
             return view('respostas.create', [
-                'periodo_id' => $periodo_id
+                'periodo_id' => $periodo_id,
+                'cursos' => $cursos,
+                'turmas' => $turmas,
             ]);
         }
 

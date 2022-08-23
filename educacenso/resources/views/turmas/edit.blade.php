@@ -20,6 +20,8 @@
                 'name' => 'curso_id',
                 'label' => 'Curso',
                 'coisas' => $cursos,
+                'id' => 'CursoTurma',
+                'sincrono' => true,
             ])
         <div>
             <a class="btn btn-danger" href="/turmas">Voltar</a>
