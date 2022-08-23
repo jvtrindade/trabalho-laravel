@@ -55,12 +55,18 @@
             'name' => 'curso_id',
             'selected' => '',
             'label' => 'Curso',
+            'coisas' => '',
+            'id' => 'curso_id',
+            'sincrono' => false
         ])
 
         @include('components.select', [
             'name' => 'turma_id',
             'selected' => '',
             'label' => 'Turma',
+            'coisas' => '',
+            'id' => 'turma_id',
+            'sincrono' => false
         ])
 
         @include('components.field', [
