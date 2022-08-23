@@ -15,8 +15,8 @@
         ])
         @include('components.field', [
             'type' => 'hidden',
-            'id' => 'uf_id',
-            'name' => 'uf_id',
+            'id' => 'uf',
+            'name' => 'uf',
             'label' => '',
             'class' => '',
             'value' => '',
@@ -24,8 +24,8 @@
         ])
         @include('components.field', [
             'type' => 'hidden',
-            'id' => 'cidade_id',
-            'name' => 'cidade_id',
+            'id' => 'cidade',
+            'name' => 'cidade',
             'class' => '',
             'label' => '',
             'value' => '',
@@ -80,12 +80,12 @@
             <option value="microonibus">Micro-Ônibus</option>
         </select>
 
-        <label for="uf">Selecione o Estado</label>
-        <select name="uf" class="form-control" id="uf"></select>
+        <label for="uf_id">Selecione o Estado</label>
+        <select name="uf_id" class="form-control" id="uf_id"></select>
 
 
-        <label for="cidade">Selecione a Cidade</label>
-        <select name="cidade" class="form-control" disabled id="cidade"></select>
+        <label for="cidade_id">Selecione a Cidade</label>
+        <select name="cidade_id" class="form-control" disabled id="cidade_id"></select>
 
         <p>Poder Público Responsável</p>
 

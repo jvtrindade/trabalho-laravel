@@ -38,7 +38,7 @@ create table respostas(
     poder_publico_responsavel enum('municipio', 'estado') not null,
     diferenca_paga float not null,
     uf varchar(200) not null,
-    uf_id int not null,
+    uf_id varchar(2) not null,
     paga_diferenca varchar(10),
 
     primary key (id),
