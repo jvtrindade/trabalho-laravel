@@ -43,8 +43,13 @@
             'sincrono' => true,
         ])
 
-        <!-- PEDIR ESTADO COM API -->
-        <!-- BUSCAR AS CIDADES -->
+
+        <label for="uf_id">Selecione o Estado</label>
+        <select name="uf_id" class="form-control" id="uf_id"></select>
+
+        <label for="cidade_id">Selecione a Cidade</label>
+        <select name="cidade_id" class="form-control" disabled id="cidade_id"></select>
+
 
         <p>Poder Público Responsável</p>
 
