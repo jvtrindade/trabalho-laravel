@@ -98,8 +98,24 @@ class RespostaController extends Controller
         $resposta = DB::table('respostas')
         ->find($id);
 
+        $turmas = DB::table('turmas')
+        ->select()
+        ->get();
+
+        $turma = DB::table('turmas')
+        ->where('id', $resposta->turma_id)
+        ->select()
+        ->first();
+
+        $cursos = DB::table('cursos')
+        ->select()
+        ->get();
+
         return view('respostas.edit', [
-            'resposta' => $resposta
+            'resposta' => $resposta,
+            'cursos' => $cursos,
+            'turmas' => $turmas,
+            'turma' => $turma,
         ]);
     }
 

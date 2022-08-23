@@ -1,38 +1,54 @@
 @extends ('base.index')
 
- @section('container')
+@section('container')
+    <form action='/respostas/update' method='post' class="form my-5">
+        <input type='hidden' name='_token' value='{{ csrf_token() }}' />
+        <input type="hidden" value="{{ $resposta->id }}" name="id" />
 
- <form action ='/respostas/update' method='post' class="form my-5">
-    <input type='hidden' name='_token' value='{{ csrf_token() }}'/>
-    <input type="hidden" value="{{ $resposta->id }}" name="id" />
+        @include('components.field', [
+            'type' => 'text',
+            'id' => 'nome_aluno',
+            'name' => 'nome_aluno',
+            'label' => 'Nome',
+            'class' => 'form-control',
+            'value' => $resposta->nome_aluno,
+            'onclick' => '',
+        ])
 
-   @include('components.field', [
-       'type' => 'text',
-       'id' => 'nome_aluno',
-       'name' => 'nome_aluno',
-       'label' => 'Nome',
-       'class' => 'form-control',
-       'value' => $resposta->nome_aluno,
-       'onclick' => ''])
+        @include('components.field', [
+            'type' => 'text',
+            'id' => 'cpf',
+            'name' => 'cpf',
+            'label' => 'CPF',
+            'class' => 'form-control',
+            'value' => $resposta->cpf,
+            'onclick' => '',
+        ])
 
-   @include('components.field', [
-       'type' => 'text',
-       'id' => 'cpf',
-       'name' => 'cpf',
-       'label' => 'CPF',
-       'class' => 'form-control',
-       'value' => $resposta ->cpf,
-       'onclick' => ''])
+        @include ('components.select', [
+            'selected' => $turma->curso_id,
+            'name' => 'curso_id',
+            'label' => 'Curso',
+            'coisas' => $cursos,
+            'id' => 'Curso',
+            'sincrono' => true,
+        ])
 
-   <!-- PEDIR ESTADO COM API -->
-   <!-- BUSCAR AS CIDADES -->
+        @include ('components.select', [
+            'selected' => $resposta->turma_id,
+            'name' => 'turma_id',
+            'label' => 'Turma',
+            'coisas' => $turmas,
+            'id' => 'CursoTurma',
+            'sincrono' => true,
+        ])
 
+        <!-- PEDIR ESTADO COM API -->
+        <!-- BUSCAR AS CIDADES -->
 
+        <p>Poder Público Responsável</p>
 
-       <p>Poder Público Responsável</p>
-
-       @if($resposta->poder_publico_responsavel == 'municipio')
-
+        @if ($resposta->poder_publico_responsavel == 'municipio')
             @include('components.checked', [
                 'type' => 'radio',
                 'id' => 'municipio',
@@ -42,7 +58,6 @@
                 'value' => 'municipio',
                 'onclick' => '',
                 'checked' => 'true',
-
             ])
 
             @include('components.field', [
@@ -54,8 +69,7 @@
                 'value' => 'Estado',
                 'onclick' => '',
             ])
-
-            @else
+        @else
             @include('components.checked', [
                 'type' => 'radio',
                 'id' => 'municipio',
@@ -65,7 +79,6 @@
                 'value' => 'municipio',
                 'onclick' => '',
                 'checked' => 'false',
-
             ])
 
             @include('components.checked', [
@@ -90,7 +103,7 @@
             'onclick' => '',
         ])
 
-   <a class="btn btn-danger" href="/respostas">Voltar</a>
-   @include('components.button', ['type' => 'submit', 'color' => 'success', 'text' => 'Alterar'])
- </form>
- @endsection
+        <a class="btn btn-danger" href="/respostas">Voltar</a>
+        @include('components.button', ['type' => 'submit', 'color' => 'success', 'text' => 'Alterar'])
+    </form>
+@endsection

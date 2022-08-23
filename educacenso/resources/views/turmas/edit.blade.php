@@ -13,16 +13,16 @@
             'value' => $turma->nome,
             'onclick' => '',
             'class' => 'form-control',
-            'onclick' => ''
+            'onclick' => '',
         ])
-            @include ('components.select', [
-                'selected' => $turma->curso_id,
-                'name' => 'curso_id',
-                'label' => 'Curso',
-                'coisas' => $cursos,
-                'id' => 'CursoTurma',
-                'sincrono' => true,
-            ])
+        @include ('components.select', [
+            'selected' => $turma->curso_id,
+            'name' => 'curso_id',
+            'label' => 'Curso',
+            'coisas' => $cursos,
+            'id' => 'CursoTurma',
+            'sincrono' => true,
+        ])
         <div>
             <a class="btn btn-danger" href="/turmas">Voltar</a>
             @include('components.button', ['type' => 'submit', 'color' => 'success', 'text' => 'Editar'])
