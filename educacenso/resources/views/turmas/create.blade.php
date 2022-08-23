@@ -17,7 +17,9 @@
             'name' => 'curso_id', //nome do campo no banco
             'selected' => '',
             'label' => 'Curso',
-            'coisas' => $cursos
+            'coisas' => '',
+            'id' => 'curso_id',
+            'sincrono' => false,
             ])
         <div class="mb-3">
             <a class="btn btn-danger" href="/turmas">Voltar</a>
