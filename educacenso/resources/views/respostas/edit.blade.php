@@ -49,7 +49,7 @@
             'name' => 'curso_id',
             'label' => 'Curso',
             'coisas' => $cursos,
-            'id' => 'curso_id',
+            'id' => 'CURSO',
             'sincrono' => true,
         ])
 
@@ -58,7 +58,7 @@
             'name' => 'turma_id',
             'label' => 'Turma',
             'coisas' => $turmas,
-            'id' => 'turma_id',
+            'id' => 'TURMA',
             'sincrono' => true,
         ])
 
