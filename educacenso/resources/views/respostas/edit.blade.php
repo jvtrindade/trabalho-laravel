@@ -6,6 +6,25 @@
         <input type="hidden" value="{{ $resposta->id }}" name="id" />
 
         @include('components.field', [
+            'type' => 'hidden',
+            'id' => 'uf',
+            'name' => 'uf',
+            'label' => '',
+            'class' => '',
+            'value' => '',
+            'onclick' => '',
+        ])
+        @include('components.field', [
+            'type' => 'hidden',
+            'id' => 'cidade',
+            'name' => 'cidade',
+            'class' => '',
+            'label' => '',
+            'value' => '',
+            'onclick' => '',
+        ])
+
+        @include('components.field', [
             'type' => 'text',
             'id' => 'nome_aluno',
             'name' => 'nome_aluno',
@@ -30,7 +49,7 @@
             'name' => 'curso_id',
             'label' => 'Curso',
             'coisas' => $cursos,
-            'id' => 'Curso',
+            'id' => 'curso_id',
             'sincrono' => true,
         ])
 
@@ -39,7 +58,7 @@
             'name' => 'turma_id',
             'label' => 'Turma',
             'coisas' => $turmas,
-            'id' => 'CursoTurma',
+            'id' => 'turma_id',
             'sincrono' => true,
         ])
 

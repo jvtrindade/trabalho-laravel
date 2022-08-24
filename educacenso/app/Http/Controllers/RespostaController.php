@@ -84,9 +84,6 @@ class RespostaController extends Controller
             $data = $request->all();
             unset($data['_token']);
             unset($data['curso_id']);
-
-            var_dump($data);
-
             DB::table('respostas')->insert($data);
 
             return redirect('/respostas');
@@ -122,6 +119,7 @@ class RespostaController extends Controller
     function update(Request $request){
         $data = $request->all();
         unset($data['_token']);
+        unset($data['curso_id']);
 
         $id = array_shift($data);
 
