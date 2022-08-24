@@ -78,7 +78,7 @@ onload = async () => {
                 }
             })
         }
-        async function getCursos() {
+        /* async function getCursos() {
             const response = await fetch('/getcursos')
             const cursos = await response.json()
 
@@ -105,7 +105,7 @@ onload = async () => {
                     document.getElementById('TURMA').appendChild(opt)
                 }
             })
-        }
+        } */
 
         getCursos()
     })
